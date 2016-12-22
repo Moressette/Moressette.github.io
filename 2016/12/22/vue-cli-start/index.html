@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Category: C/C++ | Moressette</title>
+  <title>Vue-cli搭建项目 起步 | Moressette</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -74,7 +74,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -200,69 +200,71 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>Tempora mutantur,nos et mutamur in illis, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/11/08/codeblocks/">Codeblocks教程</a></h4>
-                            
-                            <p><time datetime="2016-11-08T12:42:14.965Z"><a href="/2016/11/08/codeblocks/">2016-11-08</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-12-22T13:50:46.008Z" itemprop="datePublished">
+          2016-12-22
+      </time>
+    
+    
+    | 
+    <a href='/tags/Vue-js/'>Vue.js</a>
+    
+    
+</span>
+                <h1>Vue-cli搭建项目 起步</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<h4 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h4><blockquote>
+<p>输入<code>node -v</code>查看node版本 </p>
+</blockquote>
+<h4 id="输入sudo-npm-install-g-vue-cli"><a href="#输入sudo-npm-install-g-vue-cli" class="headerlink" title="输入sudo npm install -g vue-cli"></a>输入<code>sudo npm install -g vue-cli</code></h4><h4 id="输入vue可以查看指南，vue-list查看可用的模板"><a href="#输入vue可以查看指南，vue-list查看可用的模板" class="headerlink" title="输入vue可以查看指南，vue list查看可用的模板"></a>输入<code>vue</code>可以查看指南，<code>vue list</code>查看可用的模板</h4><h4 id="vue-cli搭建项目"><a href="#vue-cli搭建项目" class="headerlink" title="vue-cli搭建项目"></a>vue-cli搭建项目</h4><ul>
+<li>cd到要建立项目的目录</li>
+<li><code>vue init webpack</code></li>
+<li>如下图按照提示进行设置</li>
+<li><img src="http://p1.bpimg.com/567571/1aea62392df6a609.png" alt=""></li>
+<li>部署完成后cd进入项目目录，输入<code>sudo npm install</code>安装依赖（等待时间较长）<blockquote>
+<p>安装后项目中多了node_moduls目录，包含依赖的代码库</p>
+</blockquote>
+</li>
+<li>运行<code>npm run dev</code>，启动vue.js项目。</li>
+</ul>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>Think twice , code once .</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2016/12/21/linux-overview/">
+        Linux学习大纲 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/12/22/vue-cli-start/" data-title="Vue-cli搭建项目 起步" data-url="http://yoursite.com/2016/12/22/vue-cli-start/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"Moressette"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
