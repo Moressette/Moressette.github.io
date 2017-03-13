@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Tag: linux | Moressette</title>
+  <title>项目目录设计 | Moressette</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -74,7 +74,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -200,69 +200,61 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>Credo te in occursum meum non statur</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>我相信你正在与我相遇的路上马不停蹄</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/12/21/linux-overview/">Linux学习大纲</a></h4>
-                            
-                            <p><time datetime="2016-12-21T13:27:00.952Z"><a href="/2016/12/21/linux-overview/">2016-12-21</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-03-13T14:39:01.530Z" itemprop="datePublished">
+          2017-03-13
+      </time>
+    
+    
+    | 
+    <a href='/tags/Vue-js/'>Vue.js</a>
+    
+    
+</span>
+                <h1>项目目录设计</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<h5 id="所有代码都放在src目录下"><a href="#所有代码都放在src目录下" class="headerlink" title="所有代码都放在src目录下"></a>所有代码都放在src目录下<br></h5><p><img src="http://i1.piimg.com/567571/5584db2dfcb8dda2.png" alt=""><br><br><strong>src</strong><br><br><strong>|–main.js</strong><br><br>项目入口文件<br><br><strong>|–App.vue</strong><br><br>整个页面的实例文件(也就是把整个页面当成这个.vue的大组件)<br><br><strong>|–components</strong><br><br>用于存放组件<br><br><strong>|–assets</strong><br><br>本项目不使用<br><br><strong>|–common</strong><br><br>包含公共模块与资源<br><br>&nbsp;&nbsp;&nbsp;|—fonts &nbsp;&nbsp;&nbsp;*存放字体文件*<br><br>&nbsp;&nbsp;&nbsp;|—js &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*存放js文件*<br><br>&nbsp;&nbsp;&nbsp;|—stylus &nbsp;&nbsp;*css预处理器，类似SaaS*<br></p>
+<blockquote>
+<p>将.css转换为.styl文件：删除.css文件中的所有大括号<code>{}</code>以及分号<code>;</code>即可</p>
+</blockquote>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>Think twice , code once .</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2017/03/13/网页图标字体的制作/">
+        网页图标字体制作 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2017/03/13/项目目录设计/" data-title="项目目录设计" data-url="http://yoursite.com/2017/03/13/项目目录设计/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"Moressette"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
