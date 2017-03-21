@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Hello World | Moressette</title>
+  <title>组件拆分2 | Moressette</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -195,36 +195,48 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2016-11-08T09:56:32.336Z" itemprop="datePublished">
-          2016-11-08
+      <time datetime="2017-03-21T01:53:19.123Z" itemprop="datePublished">
+          2017-03-21
       </time>
     
     
     | 
-    <a href='/tags/essay/'>essay</a>
+    <a href='/tags/Vue-js/'>Vue.js</a>
     
     
 </span>
-                <h1>Hello World</h1>
+                <h1>组件拆分2</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>Hi! I’m here,is always.<br><img src="http://i1.piimg.com/1949/a1754848d4a285d2.jpg" alt=""></p>
+      		<h3 id="根据设计图将页面拆分为header，tab，content三部分。"><a href="#根据设计图将页面拆分为header，tab，content三部分。" class="headerlink" title="根据设计图将页面拆分为header，tab，content三部分。"></a>根据设计图将页面拆分为header，tab，content三部分。<br></h3><p><img src="http://i1.piimg.com/567571/1d3bf1569e3ca6cb.png" alt=""><br><br>在App.vue中编写代码<br><br><img src="http://p1.bpimg.com/567571/a6589ea8b909bf91.png" alt=""><br><br>运行结果<br><br><img src="http://p1.bqimg.com/567571/f23fea6f8ae342e3.png" alt=""><br></p>
+<h4 id="header部分"><a href="#header部分" class="headerlink" title="header部分"></a>header部分</h4><p>此时的代码很简陋，接下来我们把header抽出来，写在<code>components/header/header.vue</code>中<br><br><img src="http://p1.bqimg.com/567571/894485f384635b8d.png" alt=""><br><br>同时在<code>App.vue</code>中引入<code>header.vue</code>,就可以使用啦<br><br><img src="http://p1.bqimg.com/567571/4c3a8c948ca22368.png" alt=""><br><br>此时编译会报错<br><br><img src="http://i1.piimg.com/567571/e7c23a95c75703c8.png" alt=""><br></p>
+<blockquote>
+<h5 id="由于我们没有stylus-loader，因此我们需要安装stylus-loader"><a href="#由于我们没有stylus-loader，因此我们需要安装stylus-loader" class="headerlink" title="由于我们没有stylus-loader，因此我们需要安装stylus-loader"></a>由于我们没有stylus-loader，因此我们需要安装stylus-loader<br></h5><ul>
+<li>首先在<code>package.json</code>中填写依赖<img src="http://p1.bpimg.com/567571/dab7b9fb26690651.png" alt=""></li>
+<li>接下来在shell中执行<code>sudo npm install</code>来安装依赖</li>
+<li>如果出现如下报错<br><img src="http://p1.bqimg.com/567571/40292155b74f0c60.png" alt=""><br></li>
+<li>修改<code>package.json</code><br><br><code>&quot;stylus-loader&quot;: &quot;^2.5.1&quot;, &quot;stylus&quot;: &quot;0.52.4&quot;,</code><br><img src="http://p1.bqimg.com/567571/648bddf4ac70d3a8.png" alt=""></li>
+<li>此时再次执行<code>sudo npm install</code>即可<br><img src="http://p1.bpimg.com/567571/effecb939976c4ae.png" alt=""><br></li>
+</ul>
+</blockquote>
+<p>这时候有一个问题，<code>&lt;header&gt;</code>标签为HTML5原生标签，在运行时会有警告，这时我们只要给我们的<code>&lt;header&gt;</code>标签起一个别名就可以了<br><br><img src="http://p1.bqimg.com/567571/c9631206b0684e39.png" alt=""><br></p>
+<h3 id="tab部分"><a href="#tab部分" class="headerlink" title="tab部分"></a>tab部分</h3><p>分析效果图可以看出是一个tab父容器包含了三个子容器，我们来完善tab的div代码<br><br><img src="http://p1.bpimg.com/567571/b5e4a22f1e52c0ad.png" alt=""><br><br>运行结果如下<br><br><img src="http://i1.piimg.com/567571/6f556a7cdcc7575d.png" alt=""><br><br>接下来我们来给tab写样式，三个按钮分三列，我们用到了<strong>Flex布局</strong><br><br><img src="http://p1.bqimg.com/567571/51f08f8f2ff7296a.png" alt=""></p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2016/11/08/codeblocks/" style="float: left;">
-        ← Codeblocks教程
-    </a>
     
+    <a class="pull-right" href="/2017/03/21/组件拆分1/">
+        组件拆分1 →
+    </a>
     
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016/11/08/hello-world/" data-title="Hello World" data-url="http://yoursite.com/2016/11/08/hello-world/"></div>
+<div class="ds-thread" data-thread-key="2017/03/21/组件拆分2/" data-title="组件拆分2" data-url="http://yoursite.com/2017/03/21/组件拆分2/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"Moressette"};
 (function() {

@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Hello World | Moressette</title>
+  <title>组件拆分1 | Moressette</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -195,36 +195,50 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2016-11-08T09:56:32.336Z" itemprop="datePublished">
-          2016-11-08
+      <time datetime="2017-03-21T01:53:02.743Z" itemprop="datePublished">
+          2017-03-21
       </time>
     
     
     | 
-    <a href='/tags/essay/'>essay</a>
+    <a href='/tags/Vue-js/'>Vue.js</a>
     
     
 </span>
-                <h1>Hello World</h1>
+                <h1>组件拆分1</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>Hi! I’m here,is always.<br><img src="http://i1.piimg.com/1949/a1754848d4a285d2.jpg" alt=""></p>
+      		<h3 id="在项目中重设CSS"><a href="#在项目中重设CSS" class="headerlink" title="在项目中重设CSS"></a>在项目中重设CSS</h3><blockquote>
+<p>由于各种浏览器解释CSS样式的初始值各有不同，这就导致设计师在没有定义某个CSS属性时，不同的浏览器会按照自己默认值来为没有定义的样式赋值，甚至会无视CSS的一些声明和属性。从而不能正确显示设计师想要的样子，这就出现了浏览器兼容性问题。<strong>所以我们要先定义好一些CSS样式，来让所有浏览器都按照同样的规则解释CSS。</strong><br></p>
+</blockquote>
+<h5 id="导入reset-css文件"><a href="#导入reset-css文件" class="headerlink" title="导入reset.css文件"></a>导入reset.css文件</h5><p>如下图建立目录结构，CSS reset文件前往<a href="http://cssreset.com/" target="_blank" rel="external">http://cssreset.com/</a>下载<br><br><img src="http://p1.bqimg.com/567571/81aecf56e05ae19f.png" alt=""></p>
+<h5 id="引用reset-css"><a href="#引用reset-css" class="headerlink" title="引用reset.css"></a>引用reset.css</h5><p><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;static/css/reset.css&quot;&gt;</code></p>
+<h5 id="操作完后如下图"><a href="#操作完后如下图" class="headerlink" title="操作完后如下图"></a>操作完后如下图</h5><p><img src="http://p1.bqimg.com/567571/5baf91b7331f6a48.png" alt=""></p>
+<h3 id="设置移动端视口viewport"><a href="#设置移动端视口viewport" class="headerlink" title="设置移动端视口viewport"></a>设置移动端视口viewport</h3><blockquote>
+<p>由于开发的是移动端项目，因此视口是不能被缩放的，同时还要有初始的宽高设置</p>
+</blockquote>
+<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no&quot;&gt;</code><br><img src="http://p1.bqimg.com/567571/825b932b61ccbc9b.png" alt=""></p>
+<h3 id="配置eslint"><a href="#配置eslint" class="headerlink" title="配置eslint"></a>配置eslint</h3><p><img src="http://p1.bpimg.com/567571/5986e6950194f020.png" alt=""><br><strong>>>注意：不能删除下图代码</strong><br><br><img src="http://p1.bpimg.com/567571/2a87eb1caefd361c.png" alt=""><br><br>因为eslint默认规定在js中使用new时，必须赋值给某个变量。而在Vue中使用new实例化对象时是不需要赋值的。在代码上方添加注释<code>/*eslint-disable 具体规则*/</code>来屏蔽某些规则是eslint的常用技巧之一。</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2016/11/08/codeblocks/" style="float: left;">
-        ← Codeblocks教程
+    <a class="pull-left" href="/2017/03/21/组件拆分2/" style="float: left;">
+        ← 组件拆分2
     </a>
     
+    
+    <a class="pull-right" href="/2017/03/13/Mock数据（后台模拟数据）/">
+        Mock数据(后台模拟数据) →
+    </a>
     
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016/11/08/hello-world/" data-title="Hello World" data-url="http://yoursite.com/2016/11/08/hello-world/"></div>
+<div class="ds-thread" data-thread-key="2017/03/21/组件拆分1/" data-title="组件拆分1" data-url="http://yoursite.com/2017/03/21/组件拆分1/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"Moressette"};
 (function() {
