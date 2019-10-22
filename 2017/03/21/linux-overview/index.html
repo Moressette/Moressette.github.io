@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>Linux学习大纲 | Moressette</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Moressette">
+    <meta name="author" content="Moressette">
+    <meta name="description" content="A growing front-end engineer" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Moressette" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/C-C/" class="animsition-link">C/C++<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Essay/" class="animsition-link">Essay<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/" class="animsition-link">Linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Non-stop-FM/" class="animsition-link">Non-stop FM<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Vue-js/" class="animsition-link">Vue.js<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/test/" class="animsition-link">test<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://blog.csdn.net/wangcong9614" class="animsition-link">CSDN</a></li>
+                    
+                    <li><a href="https://developer.mozilla.org/zh-CN/" class="animsition-link">MDN</a></li>
+                    
+                    <li><a href="https://weibo.com/pandatvdodododo" class="animsition-link">❤dodo</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Moressette</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Moressette" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>❤dodo</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-03-21T02:02:30.658Z" itemprop="datePublished">
+          2017-03-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/linux/'>linux</a>,
+    
+    <a href='/tags/shell/'>shell</a>
+    
+    
+</span>
+                <h1>Linux学习大纲</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+<ul>
+<li><a href="#preface">Preface</a></li>
+<li><a href="#glossary">Glossary</a></li>
+<li><a href="#install-ubuntu-linux">Install Ubuntu Linux</a><ul>
+<li><a href="#目标">目标</a></li>
+<li><a href="#内容">内容</a></li>
+<li><a href="#shell基本命令">Shell基本命令</a><ul>
+<li><a href="#df">df</a></li>
+<li><a href="#du">du</a></li>
+</ul>
+</li>
+<li><a href="#练习">练习</a><ul>
+<li><a href="#手动安装ubuntu-desktop-1404">手动安装Ubuntu Desktop 14.04</a></li>
+<li><a href="#手动安装ubuntu-server-1404">手动安装Ubuntu Server 14.04</a></li>
+<li><a href="#自动化安装ubuntu-linux">自动化安装Ubuntu Linux</a></li>
+<li><a href="#查看ubuntu的版本和linux内核版本">查看Ubuntu的版本和Linux内核版本</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#basic-shell-knowledge">Basic Shell Knowledge</a><ul>
+<li><a href="#目标">目标</a></li>
+<li><a href="#内容">内容</a></li>
+<li><a href="#shell基本命令">Shell基本命令</a><ul>
+<li><a href="#display-system-manual-man">Display system manual: man</a></li>
+<li><a href="#search-the-whatis-database-for-stringss-apropos">Search the whatis database for stringss: apropos</a></li>
+<li><a href="#a-menu-based-hypetext-system-info-pinfo">A menu-based hypetext system: info, pinfo</a></li>
+<li><a href="#账号间的切换提权至root-sudo">账号间的切换、提权至root: sudo</a></li>
+<li><a href="#base-utilites-ls-cat-rm-less-more">Base Utilites: ls, cat, rm, less, more</a></li>
+<li><a href="#working-with-files-cp-mv-head-tail-sort-uniq-diff-file">Working with files: cp, mv, head, tail, sort, uniq, diff, file</a></li>
+<li><a href="#find-something-find-mlocate-locate-which-grep">Find something: find, mlocate, locate, which, grep</a></li>
+<li><a href="#manipulate-text-awk-sed-ack">Manipulate text: awk, sed, ack</a></li>
+<li><a href="#more-commands-echo-date">More commands: echo, date</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#install-and-manage-packages">Install and Manage Packages</a><ul>
+<li><a href="#目标">目标</a></li>
+<li><a href="#内容">内容</a></li>
+<li><a href="#shell命令">Shell命令</a><ul>
+<li><a href="#debian-package-management-system-dpkg">Debian package management system: dpkg</a></li>
+<li><a href="#advanced-package-tool-apt">Advanced Package Tool: apt</a></li>
+<li><a href="#aptitude">aptitude</a></li>
+<li><a href="#git">git</a></li>
+<li><a href="#wget">wget</a></li>
+</ul>
+</li>
+<li><a href="#练习">练习</a><ul>
+<li><a href="#查找软件包">查找软件包</a></li>
+<li><a href="#下载软件包">下载软件包</a></li>
+<li><a href="#安装软件包">安装软件包</a></li>
+<li><a href="#移除软件包">移除软件包</a></li>
+<li><a href="#自动移除软件包">自动移除软件包</a></li>
+<li><a href="#清除下载的软件包">清除下载的软件包</a></li>
+<li><a href="#更新源">更新源</a></li>
+<li><a href="#更新系统">更新系统</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#ssh">SSH</a><ul>
+<li><a href="#目标">目标</a></li>
+<li><a href="#内容">内容</a></li>
+<li><a href="#shell基本命令">Shell基本命令</a><ul>
+<li><a href="#ssh">SSH</a></li>
+<li><a href="#本地和远程操作系统之间拷贝文件-scp-sftp-sshfs-rsync">本地和远程操作系统之间拷贝文件: <code>scp</code>, <code>sftp</code>, <code>sshfs</code>, <code>rsync</code></a></li>
+<li><a href="#record-a-shell-session-script">Record a shell session: <code>script</code></a></li>
+<li><a href="#convert-linux-and-macos-files-to-windows-format-todos-fromdos">Convert linux and macos files to windows format: <code>todos</code>, <code>fromdos</code></a></li>
+</ul>
+</li>
+<li><a href="#练习">练习</a><ul>
+<li><a href="#安装ssh-server或者ssh-client">安装SSH Server或者SSH Client</a></li>
+<li><a href="#在客户端操作系统上通过ssh连接ubuntu-server">在客户端操作系统上通过SSH连接Ubuntu Server</a></li>
+<li><a href="#通过scp向server传送文件">通过scp向server传送文件</a></li>
+<li><a href="#通过scp从server获取文件">通过scp从server获取文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#basic-vim-usage">Basic Vim Usage</a><ul>
+<li><a href="#目标">目标</a></li>
+<li><a href="#熟悉vim">熟悉Vim</a></li>
+</ul>
+</li>
+<li><a href="#advanced-vim-usage">Advanced Vim Usage</a></li>
+<li><a href="#file-directory-user-user-group-authority">File, Directory, User, User Group, Authority</a><ul>
+<li><a href="#目标">目标</a></li>
+<li><a href="#内容">内容</a></li>
+</ul>
+</li>
+<li><a href="#compress-and-uncompress-files">Compress and Uncompress Files</a><ul>
+<li><a href="#目标">目标</a></li>
+<li><a href="#内容">内容</a></li>
+<li><a href="#练习">练习</a><ul>
+<li><a href="#bzip2-bunzip2-bzcat命令练习"><code>bzip2</code>, <code>bunzip2</code>, <code>bzcat</code>命令练习</a></li>
+<li><a href="#tar命令练习"><code>tar</code>命令练习</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#process">Process</a><ul>
+<li><a href="#目标">目标</a></li>
+<li><a href="#内容">内容</a></li>
+<li><a href="#shell基本命令">Shell基本命令</a></li>
+</ul>
+</li>
+<li><a href="#basic-network-management">Basic Network Management</a><ul>
+<li><a href="#目标">目标</a></li>
+<li><a href="#basic-network-management">Basic Network Management</a></li>
+<li><a href="#shell命令">Shell命令</a></li>
+</ul>
+</li>
+<li><a href="#writing-shell-scripts">Writing Shell Scripts</a><ul>
+<li><a href="#目标">目标</a></li>
+<li><a href="#基本概念">基本概念</a><ul>
+<li><a href="#交互式shell和非交互式shell登录shell和非登录shell的区别">交互式shell和非交互式shell、登录shell和非登录shell的区别</a></li>
+<li><a href="#如何让你的shell脚本更健壮和更可靠">如何让你的shell脚本更健壮和更可靠</a></li>
+<li><a href="#语法">语法</a><ul>
+<li><a href="#常用系统变量">常用系统变量</a></li>
+<li><a href="#builtin-commands-that-are-symbols">Builtin commands that are symbols</a></li>
+<li><a href="#control-structures">Control Structures</a><ul>
+<li><a href="#ifelse-pattern">if…else pattern</a></li>
+<li><a href="#ifthenelse-pattern">if…then…else pattern</a></li>
+<li><a href="#ifthenelif-pattern">if…then…elif pattern</a></li>
+<li><a href="#forin-pattern">for…in pattern</a></li>
+<li><a href="#for-pattern">for pattern</a></li>
+<li><a href="#while-pattern">while pattern</a></li>
+<li><a href="#until-pattern">until pattern</a></li>
+<li><a href="#break-and-continue-pattern">break and continue pattern</a></li>
+<li><a href="#case-pattern">case pattern</a></li>
+<li><a href="#select-pattern">select pattern</a></li>
+</ul>
+</li>
+<li><a href="#file-descriptors">File Descriptors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#shell命令">Shell命令</a></li>
+</ul>
+</li>
+<li><a href="#schedule-tasks">Schedule Tasks</a><ul>
+<li><a href="#目标">目标</a></li>
+<li><a href="#内容">内容</a><ul>
+<li><a href="#参考">参考</a></li>
+<li><a href="#cron的坑">cron的坑</a></li>
+<li><a href="#cron和anacron的区别">cron和anacron的区别</a></li>
+<li><a href="#crontab文件">Crontab文件</a><ul>
+<li><a href="#系统crontab文件">系统crontab文件</a></li>
+<li><a href="#用户crontab文件">用户crontab文件</a></li>
+</ul>
+</li>
+<li><a href="#anacron配置文件">anacron配置文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#futher-reading">Futher Reading</a><ul>
+<li><a href="#knowledge">Knowledge</a></li>
+<li><a href="#utilites">Utilites</a></li>
+</ul>
+</li>
+<li><a href="#faq">FAQ</a><ul>
+<li><a href="#如何安装中文语言支持及中文输入法">如何安装中文语言支持及中文输入法</a></li>
+<li><a href="#如何升级系统安装最新的补丁和最新版本的软件">如何升级系统，安装最新的补丁和最新版本的软件</a></li>
+<li><a href="#修改ubuntu-software-repository的下载地址">修改Ubuntu Software Repository的下载地址</a></li>
+<li><a href="#如何给ubuntu-linux-virutal-machine安装vmware-tools">如何给Ubuntu Linux Virutal Machine安装VMWare Tools</a></li>
+<li><a href="#如何给ubuntu-linux-virtual-machine安装parallel-tools">如何给Ubuntu Linux Virtual Machine安装Parallel Tools</a></li>
+<li><a href="#使用命令man-wget-man-wgettxt把命令文档输入到文本文件后打开man-wgettxt发现有很多重复字符或者乱码">使用命令<code>man wget &gt; man-wget.txt</code>把命令文档输入到文本文件后，打开man-wget.txt，发现有很多重复字符，或者乱码？</a></li>
+<li><a href="#如何修改os的hostname">如何修改OS的hostname</a></li>
+<li><a href="#设置dns服务的服务地址">设置DNS服务的服务地址</a></li>
+<li><a href="#如何配置网卡和ip地址">如何配置网卡和IP地址</a></li>
+<li><a href="#如何从internet更新ubuntu本地的时间">如何从Internet更新ubuntu本地的时间？</a></li>
+<li><a href="#切换网络后如何强制更新网卡ip">切换网络后，如何强制更新网卡IP？</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><p>面向开发的Ubuntu Linux快速学习手册，掌握基本Ubuntu Linux操作和管理</p>
+<h1 id="Glossary"><a href="#Glossary" class="headerlink" title="Glossary"></a>Glossary</h1><ul>
+<li><strong>PG2UL</strong>: 代表Pratical Guide to Ubuntu Linux, 3rd</li>
+</ul>
+<h1 id="Install-Ubuntu-Linux"><a href="#Install-Ubuntu-Linux" class="headerlink" title="Install Ubuntu Linux"></a>Install Ubuntu Linux</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>了解Ubuntu各版本的区别</li>
+<li>安装Ubuntu Desktop 12.04和Ubuntu Server 12.04</li>
+<li>熟悉常见目录的用途</li>
+<li>了解mount point的概念</li>
+<li>熟悉primary partition、extended partition、logical partition的概念</li>
+</ul>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ul>
+<li>Ubuntu各个release版本的区别，参考下面几篇文章：<ul>
+<li><a href="https://en.wiki2.org/wiki/List_of_Ubuntu_releases" target="_blank" rel="external">List of Ubuntu releases</a></li>
+<li><a href="https://wiki.ubuntu.com/Releases" target="_blank" rel="external">Ubuntu Release</a></li>
+<li><a href="http://releases.ubuntu.com/" target="_blank" rel="external">Download Link of Ubuntu Releases</a></li>
+</ul>
+</li>
+<li>Ubuntu每个release的不同edition的区别(参考PG2UL, page 32)<ul>
+<li><strong>DVD</strong>: The DVD is a live/install DVD. The DVD includes all software packages supported by Ubuntu, not just those installed by default.</li>
+<li><strong>Desktop CD</strong>: The Desktop CD is a live/install CD</li>
+<li><strong>Alternate CD</strong>: The Alternate Install CD is not a live CD; it is intended for special installations only. It presents more advanced installation options than the Desktop CD does. This CD is available for PC and 64-bit PC architectures (page 29), uses the textual installer, and installs an Ubuntu system that displays either a graphical or a textual interface.</li>
+<li><strong>Server CD</strong>: The Server CD is not a live CD; it is intended for installation only.</li>
+<li><strong>Minimal CD</strong>: Not an official edition, the Minimal CD is small (5–20 megabytes) and provides a quick installation.</li>
+</ul>
+</li>
+<li>Linux下的各种文件系统的区别<ul>
+<li><a href="http://misujun.blog.51cto.com/2595192/883949" target="_blank" rel="external">Ext2、Ext3和Ext4之间的区别</a></li>
+</ul>
+</li>
+<li><p>Linux目录层级结构，及常见目录(参考PG2UL, page 39)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">rwxr-xr-x   2 root root  4096 Jul 28 11:46 bin/</div><div class="line">drwxr-xr-x   3 root root  4096 Jul 28 10:28 boot/</div><div class="line">drwxr-xr-x  17 root root  4240 Jul 28 11:48 dev/</div><div class="line">drwxr-xr-x  90 root root  4096 Jul 28 18:25 etc/</div><div class="line">drwxr-xr-x   3 root root  4096 May 10 02:02 home/</div><div class="line">drwxr-xr-x  21 root root  4096 May 10 02:01 lib/</div><div class="line">drwxr-xr-x   2 root root  4096 Jul  8 01:10 lib64/</div><div class="line">drwx------   2 root root 16384 May 10 01:56 lost+found/</div><div class="line">drwxr-xr-x   4 root root  4096 May 10 01:56 media/</div><div class="line">drwxr-xr-x   2 root root  4096 Apr 11  2014 mnt/</div><div class="line">drwxr-xr-x   2 root root  4096 Feb 19 03:33 opt/</div><div class="line">dr-xr-xr-x 407 root root     0 Jul 28 11:48 proc/</div><div class="line">drwx------   2 root root  4096 May 10 01:56 root/</div><div class="line">drwxr-xr-x  18 root root   680 Jul 28 18:26 run/</div><div class="line">drwxr-xr-x   2 root root 12288 Jul 28 11:46 sbin/</div><div class="line">drwxr-xr-x   2 root root  4096 Feb 19 03:33 srv/</div><div class="line">dr-xr-xr-x  13 root root     0 Jul 28 17:24 sys/</div><div class="line">drwxrwxrwt   2 root root  4096 Jul 28 19:17 tmp/</div><div class="line">drwxr-xr-x  10 root root  4096 May 10 01:56 usr/</div><div class="line">drwxr-xr-x  12 root root  4096 May 10 02:01 var/</div></pre></td></tr></table></figure>
+</li>
+<li><p>Mount Points(参考PG2UL, page 35)</p>
+<ul>
+<li>The directory that you mount a filesystem on is called a mount point.</li>
+<li>通过<code>mount</code>命令查看分区</li>
+<li><code>/etc/fstab</code>: The file that holds the information relating partitions to mount points</li>
+</ul>
+</li>
+<li>Primary, extended and logical partitions（参考PG2UL, page 34，把这三个概念讲的很清楚）<ul>
+<li>一个Disk最多有4个Primary partitions</li>
+<li>只能把4个Primary partitions中的一个划分为多个logical partitions，这个被划分的primary partition就叫extended partition</li>
+<li>示意图<br><img src="./img/2015/06/primary-extended-logical-partition.png" alt=""></li>
+</ul>
+</li>
+<li>LVM: Logical Volume Manager<ul>
+<li>阅读<a href="http://ixdba.blog.51cto.com/2895551/562111/" target="_blank" rel="external">浅谈Linux磁盘存储管理续</a></li>
+<li>阅读<a href="https://wiki.archlinux.org/index.php/LVM_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" target="_blank" rel="external">LVM (简体中文) - ArchLinux Wiki</a></li>
+<li>阅读<a href="https://wiki.archlinux.org/index.php/RAID" target="_blank" rel="external">RAID</a></li>
+<li>阅读<a href="https://wiki.archlinux.org/index.php/Software_RAID_and_LVM" target="_blank" rel="external">Software RAID and LVM</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Shell基本命令"><a href="#Shell基本命令" class="headerlink" title="Shell基本命令"></a>Shell基本命令</h2><h3 id="df"><a href="#df" class="headerlink" title="df"></a>df</h3><p><code>df</code>: 检查linux服务器的文件系统的磁盘空间占用情况，可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。</p>
+<ul>
+<li>参考 <a href="http://www.cnblogs.com/peida/archive/2012/12/07/2806483.html" target="_blank" rel="external">每天一个linux命令（33）：df 命令</a></li>
+</ul>
+<h3 id="du"><a href="#du" class="headerlink" title="du"></a>du</h3><p><code>du</code>: 也是查看使用空间的，但是与<code>df</code>命令不同的是<code>du</code>命令是对文件和目录磁盘使用的空间的查看。</p>
+<ul>
+<li>参考 <a href="http://www.cnblogs.com/peida/archive/2012/12/10/2810755.html" target="_blank" rel="external">每天一个linux命令（34）：du 命令</a></li>
+</ul>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h3 id="手动安装Ubuntu-Desktop-14-04"><a href="#手动安装Ubuntu-Desktop-14-04" class="headerlink" title="手动安装Ubuntu Desktop 14.04"></a>手动安装Ubuntu Desktop 14.04</h3><h3 id="手动安装Ubuntu-Server-14-04"><a href="#手动安装Ubuntu-Server-14-04" class="headerlink" title="手动安装Ubuntu Server 14.04"></a>手动安装Ubuntu Server 14.04</h3><h3 id="自动化安装Ubuntu-Linux"><a href="#自动化安装Ubuntu-Linux" class="headerlink" title="自动化安装Ubuntu Linux"></a>自动化安装Ubuntu Linux</h3><ul>
+<li><a href="https://en.wiki2.org/wiki/Preboot_Execution_Environment" target="_blank" rel="external">Preboot Execution Environment</a></li>
+<li><a href="http://www.cobblerd.org/manuals/quickstart/" target="_blank" rel="external">Cobbler Quickstart Guide</a></li>
+<li><a href="http://os.51cto.com/art/201109/288604_all.htm" target="_blank" rel="external">运维自动化之Cobbler系统安装详解</a></li>
+</ul>
+<h3 id="查看Ubuntu的版本和Linux内核版本"><a href="#查看Ubuntu的版本和Linux内核版本" class="headerlink" title="查看Ubuntu的版本和Linux内核版本"></a>查看Ubuntu的版本和Linux内核版本</h3><ul>
+<li><code>cat /etc/issue</code></li>
+<li><code>sudo lsb_release -a</code></li>
+<li><code>uname -r</code></li>
+<li>执行结果见下图：<br>  <img src="./img/2015/06/view-ubuntu-version-and-kernel-version.png" alt=""></li>
+</ul>
+<h1 id="Basic-Shell-Knowledge"><a href="#Basic-Shell-Knowledge" class="headerlink" title="Basic Shell Knowledge"></a>Basic Shell Knowledge</h1><h2 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>掌握Shell基本概念</li>
+<li>掌握基本的Shell命令</li>
+</ul>
+<h2 id="内容-1"><a href="#内容-1" class="headerlink" title="内容"></a>内容</h2><ul>
+<li>基础概念<ul>
+<li><a href="http://www.php100.com/html/webkaifa/Linux/2010/0430/6470.html" target="_blank" rel="external">重定向</a>: the various ways you can cause the shell to alter where standard input of a command comes from and where standard output goes to.<ul>
+<li>理解符号 <code>&lt;</code>, <code>&gt;</code>, <code>&gt;&gt;</code></li>
+</ul>
+</li>
+<li><a href="http://wenku.baidu.com/view/5a7aeff4f61fb7360b4c65ba.html" target="_blank" rel="external">管道</a>: The shell uses a pipe to connect standard output of one command to standard input of another command.<ul>
+<li>理解符号 <code>|</code></li>
+<li>理解filter: A filter is a command that processes an input stream of data to produce an output stream of data. 比如<code>sort</code>、<code>tee</code>。<ul>
+<li><a href="http://codingstandards.iteye.com/blog/833695" target="_blank" rel="external">Linux命令之tee - 重定向输出到多个文件</a></li>
+<li><a href="http://www.cnblogs.com/51linux/archive/2012/05/23/2515299.html" target="_blank" rel="external">linux sort 命令详解</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>通配符<code>?</code>, <code>*</code>, <code>[]</code><ul>
+<li><code>ls memo?</code></li>
+<li><code>ls t*</code></li>
+<li><code>lpr part[01235]</code>, <code>lpr part[0-35]</code>, <code>ls *[^ab]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>推荐的Shell<ul>
+<li>一般Linux发行版默认的shell是bash，但这里推荐Linux推荐安装zsh + <a href="http://ohmyz.sh/" target="_blank" rel="external">oh-my-zsh</a>，理由如下：<ul>
+<li>zsh vs bash<ul>
+<li><a href="https://www.soimort.org/posts/163/" target="_blank" rel="external">Zsh和Bash，究竟有何不同</a></li>
+<li><a href="http://www.slideshare.net/juandebravo/zsh-shellforhumans-27933808?related=2" target="_blank" rel="external">Zsh shell-for-humans</a></li>
+<li><a href="http://www.slideshare.net/brendon_jag/why-zsh-is-cooler-than-your-shell?related=1" target="_blank" rel="external">Why zsh is Cooler than Your Shel</a></li>
+</ul>
+</li>
+<li>安装oh-my-zsh<ul>
+<li>先确认os中是否安装了zsh，如果没有安装，先安装zsh, <code>sudo apt-get install zsh</code></li>
+<li>按照<a href="http://ohmyz.sh/" target="_blank" rel="external">http://ohmyz.sh/</a>的方法安装oh-my-zsh</li>
+<li>如果安装完成后，默认的shell不是zsh，按照如下操作：<ul>
+<li>执行<code>sudo chsh -s /bin/zsh</code></li>
+<li>重启系统，打开terminal，oh-my-zsh就生效了</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Windows下安装<a href="http://www.netsarang.com/products/xsh_overview.html" target="_blank" rel="external">Xshell</a>（其次是SecureCRT，Putty）</li>
+<li>MacOS下安装<a href="http://ohmyz.sh/" target="_blank" rel="external">oh-my-zsh</a>, <a href="https://www.iterm2.com/index.html" target="_blank" rel="external">iTerm2</a>, <a href="http://tmux.sourceforge.net/" target="_blank" rel="external">Tmux</a><ul>
+<li><a href="http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man1/tmux.1?query=tmux&amp;sec=1" target="_blank" rel="external">TMUX Manual</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在后台进程管理，<ul>
+<li>参考<a href="http://blog.csdn.net/fengyifei11228/article/details/5737371" target="_blank" rel="external">Linux后台进程管理</a><ul>
+<li><code>ls -l | lpr &amp;</code></li>
+<li>Control-Z: You can suspend a foreground job (stop it from running) by pressing the suspend key, usually CONTROL-Z. The shell then stops the process and disconnects standard input from the keyboard. You can put a suspended job in the background and restart it by using the <code>bg</code> command followed by the job number. You do not need to specify the job number when there is only one stopped job.</li>
+<li><code>jobs</code>: view background jobs</li>
+<li><code>fg</code>: connect the key-board to a program running in the background, bring it to the fore- ground.</li>
+<li><code>kill</code>: kill process like <code>kill 18228</code>, kill background job like <code>kill %1</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Shell基本命令-1"><a href="#Shell基本命令-1" class="headerlink" title="Shell基本命令"></a>Shell基本命令</h2><h3 id="Display-system-manual-man"><a href="#Display-system-manual-man" class="headerlink" title="Display system manual: man"></a>Display system manual: man</h3><h3 id="Search-the-whatis-database-for-stringss-apropos"><a href="#Search-the-whatis-database-for-stringss-apropos" class="headerlink" title="Search the whatis database for stringss: apropos"></a>Search the whatis database for stringss: apropos</h3><h3 id="A-menu-based-hypetext-system-info-pinfo"><a href="#A-menu-based-hypetext-system-info-pinfo" class="headerlink" title="A menu-based hypetext system: info, pinfo"></a>A menu-based hypetext system: info, pinfo</h3><h3 id="账号间的切换、提权至root-sudo"><a href="#账号间的切换、提权至root-sudo" class="headerlink" title="账号间的切换、提权至root: sudo"></a>账号间的切换、提权至root: sudo</h3><h3 id="Base-Utilites-ls-cat-rm-less-more"><a href="#Base-Utilites-ls-cat-rm-less-more" class="headerlink" title="Base Utilites: ls, cat, rm, less, more"></a>Base Utilites: ls, cat, rm, less, more</h3><ul>
+<li><code>ls</code>: list the names of files</li>
+<li><code>cat</code>: display a text files</li>
+<li><code>rm</code>: delete a files</li>
+<li><code>less</code>, <code>more</code>: display a text file one screen at a time</li>
+</ul>
+<h3 id="Working-with-files-cp-mv-head-tail-sort-uniq-diff-file"><a href="#Working-with-files-cp-mv-head-tail-sort-uniq-diff-file" class="headerlink" title="Working with files: cp, mv, head, tail, sort, uniq, diff, file"></a>Working with files: cp, mv, head, tail, sort, uniq, diff, file</h3><ul>
+<li><code>cp</code>: copy file</li>
+<li><code>mv</code>: move file, change the name of file</li>
+<li><code>head</code>: diplay the beginning of a file</li>
+<li><code>tail</code>: display the end of a file，参考<a href="http://www.cnblogs.com/peida/archive/2012/11/07/2758084.html" target="_blank" rel="external">tail命令</a></li>
+<li><code>sort</code>: sort lines of text，参考<a href="http://roclinux.cn/?p=1350" target="_blank" rel="external">sort命令</a></li>
+<li><code>uniq</code>: remove duplicate lines from a file，参考<a href="http://www.linuxso.com/command/uniq.html" target="_blank" rel="external">uniq命令</a></li>
+<li><code>diff</code>: compare two files，参考<a href="http://www.cnblogs.com/peida/archive/2012/12/12/2814048.html" target="_blank" rel="external">diff命令</a></li>
+<li><code>file</code>: determine file type</li>
+</ul>
+<h3 id="Find-something-find-mlocate-locate-which-grep"><a href="#Find-something-find-mlocate-locate-which-grep" class="headerlink" title="Find something: find, mlocate, locate, which, grep"></a>Find something: find, mlocate, locate, which, grep</h3><ul>
+<li><code>find</code>: walk a file hierarchy, <a href="http://www.cnblogs.com/peida/archive/2012/11/13/2767374.html" target="_blank" rel="external">每天一个linux命令（19）：find 命令概览</a></li>
+<li>find filenames quickly<ul>
+<li><code>mlocate</code>: ubuntu, centos下使用此命令，使用前需要执行<code>updatedb</code>命令创建<code>/var/lib/mlocate/mlocate.db</code>索引文件</li>
+<li><code>locate</code>: MacOS使用此命令，使用前需要执行<code>sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist</code>创建<code>/var/db/locate.database</code>索引文件</li>
+</ul>
+</li>
+<li><code>which</code>, whereis: locate a utility</li>
+<li><code>grep</code>: <a href="http://www.cnblogs.com/peida/archive/2012/12/17/2821195.html" target="_blank" rel="external">每天一个linux命令（39）：grep 命令</a></li>
+</ul>
+<h3 id="Manipulate-text-awk-sed-ack"><a href="#Manipulate-text-awk-sed-ack" class="headerlink" title="Manipulate text: awk, sed, ack"></a>Manipulate text: awk, sed, ack</h3><ul>
+<li><code>awk</code>: awk是一个强大的文本分析工具，相对于grep的查找，sed的编辑，awk在其对数据分析并生成报告时，显得尤为强大。<ul>
+<li><a href="http://www.cnblogs.com/ggjucheng/archive/2013/01/13/2858470.html" target="_blank" rel="external">linux awk命令详解</a></li>
+<li><a href="http://www.hcs.harvard.edu/~dholland/computers/awk.html" target="_blank" rel="external">simple awk tutorial</a></li>
+</ul>
+</li>
+<li><code>sed</code>: edit text<ul>
+<li><a href="http://www.cnblogs.com/emanlee/archive/2013/09/07/3307642.html" target="_blank" rel="external">linux中sed的用法</a></li>
+</ul>
+</li>
+<li><code>ack</code>: a tool like grep, optimized for programmers<ul>
+<li><a href="http://beyondgrep.com/" target="_blank" rel="external">Offical website</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="More-commands-echo-date"><a href="#More-commands-echo-date" class="headerlink" title="More commands: echo, date"></a>More commands: echo, date</h3><ul>
+<li><code>echo</code>: display text</li>
+<li><code>date</code>: display the time and date，参考<a href="http://www.cnblogs.com/peida/archive/2012/12/12/2814048.html" target="_blank" rel="external">date命令</a></li>
+</ul>
+<h1 id="Install-and-Manage-Packages"><a href="#Install-and-Manage-Packages" class="headerlink" title="Install and Manage Packages"></a>Install and Manage Packages</h1><h2 id="目标-2"><a href="#目标-2" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>安装和管理包</li>
+<li>掌握<code>dpkg</code>, <code>apt</code>, <code>aptitude</code>命令</li>
+</ul>
+<h2 id="内容-2"><a href="#内容-2" class="headerlink" title="内容"></a>内容</h2><ul>
+<li>Repository: Repositories hold collections of software packages and related information, including headers that describe each package and provide information on other packages the package depends on. Ubuntu maintains repositories for each of its releases.<ul>
+<li>main: Ubuntu-supported open-source software</li>
+<li>universe: Community-maintained open-source software</li>
+<li>multiverse: Software restricted by copyright or legal issues</li>
+<li>restricted: Proprietary device drivers</li>
+<li>partner: Packages that are not part of Ubuntu; offered by other vendors</li>
+<li>backports: Packages from later releases of Ubuntu that are not available for an earlier release</li>
+</ul>
+</li>
+<li><code>/etc/apt/sources.list</code>: specifies the repositories APT searches when you ask it to find or install a package.<ul>
+<li>通过命名修改repository地址为中国访问更快的”mirrors.yun-idc.com”: <code>sudo sed -i &#39;s/archive.ubuntu.com/mirrors.yun-idc.com/g&#39; /etc/apt/sources.list</code></li>
+</ul>
+</li>
+<li>APT local package indexes is in <code>/var/lib/apt/lists</code> directory. APT uses these files to determine whether the packages on the system, and those in its cache, are the most recent versions.</li>
+<li><code>/var/cache/apt/archives</code> directory holds recently downloaded deb files</li>
+<li>The aptitude utility keeps very readable logs in <code>/var/log/aptitude</code></li>
+<li>参考内容<ul>
+<li><a href="http://wiki.ubuntu.org.cn/包管理系统指南" target="_blank" rel="external">包管理系统指南</a></li>
+<li><a href="https://help.ubuntu.com/lts/serverguide/package-management.html" target="_blank" rel="external">Ubuntu服务器管理指南 - 包管理</a></li>
+<li>PG2UL, page 517, chapter 13 - downloading and installing software</li>
+</ul>
+</li>
+</ul>
+<h2 id="Shell命令"><a href="#Shell命令" class="headerlink" title="Shell命令"></a>Shell命令</h2><h3 id="Debian-package-management-system-dpkg"><a href="#Debian-package-management-system-dpkg" class="headerlink" title="Debian package management system: dpkg"></a>Debian package management system: dpkg</h3><p>dpkg主要是对本地的软件包进行管理，本地软件包包括已经在本地安装的软件包和已经下载但还没有安装的 deb 文件，不解决依赖关系。</p>
+<h3 id="Advanced-Package-Tool-apt"><a href="#Advanced-Package-Tool-apt" class="headerlink" title="Advanced Package Tool: apt"></a>Advanced Package Tool: apt</h3><ul>
+<li>apt和dpkg的用途比较：APT downloads software packages, while dpkg installs, removes, maintains, manages dependencies of, and reports on software packages.</li>
+<li>apt的命令包含<ul>
+<li><code>apt-get</code>: 主要负责软件包的在线安装与升级，低层对 deb 包的处理还是用的 dpkg，解决依赖关系</li>
+<li><code>apt-cache</code>: 主要用来查询软件包的状态和依赖关系</li>
+<li><code>apt-file</code>: 主要负责查询软件包名称和软件包包含的文件（值得注意的是它要自己同步）</li>
+</ul>
+</li>
+</ul>
+<h3 id="aptitude"><a href="#aptitude" class="headerlink" title="aptitude"></a>aptitude</h3><ul>
+<li>Ubuntu desktop 14.04中，并没有默认安装aptitude，需要执行<code>sudo apt-get install aptitude</code>来安装</li>
+<li><code>aptitude install</code>: install package and its dependencies</li>
+<li><code>aptitude remove</code>: remove package and its dependencies, but not include configuration</li>
+<li><code>aptitude purge</code>: remove package and its dependencies, configuration</li>
+<li><code>aptitude search</code>: looks for packages with names that match a pattern</li>
+<li><code>aptitude clean</code>: Deletes all packages from the APT cache</li>
+<li>参考：<ul>
+<li><a href="https://help.ubuntu.com/lts/serverguide/aptitude.html" target="_blank" rel="external">Aptitude</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><ul>
+<li>阅读<a href="https://git-scm.com/book/en/v2" target="_blank" rel="external">Pro Git (En)</a>， <a href="http://iissnan.com/progit/" target="_blank" rel="external">Pro Git中文版</a></li>
+</ul>
+<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3><ul>
+<li>在线html文档，访问<a href="http://www.gnu.org/software/wget/manual/wget.html" target="_blank" rel="external">wget html document</a></li>
+</ul>
+<h2 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h2><h3 id="查找软件包"><a href="#查找软件包" class="headerlink" title="查找软件包"></a>查找软件包</h3><p><code>aptitude search</code>命令的查找结果一般如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">➜  ~  aptitude search <span class="string">'~ivim'</span></div><div class="line">i   vim                                                                 - Vi IMproved - enhanced vi editor                                              </div><div class="line">i   vim-common                                                          - Vi IMproved - Common files                                                    </div><div class="line">i A vim-runtime                                                         - Vi IMproved - Runtime files                                                   </div><div class="line">i   vim-tiny                                                            - Vi IMproved - enhanced vi editor - compact version</div></pre></td></tr></table></figure>
+<p>The letter in the first column of each entry indicates the status of the package on the system:</p>
+<ul>
+<li><code>i</code> for installed</li>
+<li><code>c</code> for removed except for configuration files</li>
+<li><code>p</code> for purged (package and configuration files removed)</li>
+<li><code>v</code> for a <strong>virtual package</strong> (When you install certain packages, aptitude queries you and, if you agree, installs more than one package. You are either installing a package with dependencies or a virtual package, also called a metapackage. A <strong>virtual package</strong> is not a software package, but rather a metapackage that depends on other packages. Virtual pack- ages facilitate the installation of software that requires multiple packages.)</li>
+</ul>
+<p>A second letter in the first column indicates a stored action that will be performed on the package.<br>An <code>A</code> appearing as the third letter means the package was automatically installed.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">dpkg --get-selections pattern <span class="comment">#查找软件包名称包含 pattern 的软件包，可以在后面用 grep install/deinstall 来选择是否已经被 remove 的包(曾经安装过了的)</span></div><div class="line">apt-cache search pattern <span class="comment">#查找软件包名称和描述包含 pattern 的软件包 (可以是安装了也可以是没有安装)，可以用参数来限制是否已经安装</span></div><div class="line">aptitude search <span class="string">'~ipattern'</span> <span class="comment">#查找已经安装的软件包</span></div><div class="line">aptitude search <span class="string">'~cpattern'</span> <span class="comment">#查找已经被 remove 的软件包，还有配置文件存在</span></div><div class="line">aptitude search <span class="string">'~npattern'</span> <span class="comment">#查找软件包名称包含 pattern 的软件包 (可以是安装了也可以是没有安装)</span></div><div class="line">aptitude search <span class="string">'!~i~npattern'</span> <span class="comment">#查找还没有安装的软件包名字包含 pattern 的软件包。(前面的 ! 是取反的意思，反划线是 escape 符号)</span></div><div class="line">注：还有很多用法，可以去看看我在 forum 中写的帖子 [aptitude Search Patterns](http://forum.ubuntu.org.cn/viewtopic.php?f=52&amp;t=259550)</div><div class="line"></div><div class="line">apt-cache depends package <span class="comment">#查找名称是 package 软件包的依赖关系</span></div><div class="line">aptitude search <span class="string">'~R~npackage'</span> <span class="comment">#查找名称是 package 软件包的依赖关系，可以同时看到是不是已经安装</span></div><div class="line"></div><div class="line">apt-cache rdepends package <span class="comment">#查找哪些软件包依赖于名称是 package 软件包</span></div><div class="line">aptitude search <span class="string">'~D~npackage'</span> <span class="comment">#查找哪些软件包依赖于名称是 package 软件包</span></div><div class="line"></div><div class="line">dpkg -I package_name.deb <span class="comment">#参数是大写i，查找已经下载但末安装的 package_name.deb 软件包的信息</span></div><div class="line">dpkg <span class="_">-l</span> package <span class="comment">#参数是小写L，查找已经安装软件包 package 的信息，精简</span></div><div class="line">apt-cache show pattern <span class="comment">##查找软件包pattern的信息 (可以是安装了也可以是没有安装)</span></div><div class="line">aptitude show ~npattern <span class="comment">#显示名称是 pattern 软件包的信息(可以是安装了也可以是没有安装)</span></div><div class="line"></div><div class="line">apt-cache policy pattern <span class="comment">#显示 pattern 软件包的策略(可以是安装了也可以是没有安装)</span></div><div class="line">apt-cache showpkg pattern <span class="comment">#显示pattern 软件包的其它信息(可以是安装了也可以是没有安装)</span></div><div class="line"></div><div class="line">dpkg -S pattern <span class="comment">#查找已经安装的文件 pattern 属于哪个软件包</span></div><div class="line">apt-file search pattern <span class="comment">#查找文件 pattern 属于哪个软件包(可以是安装了也可以是没有安装)</span></div><div class="line"></div><div class="line">dpkg -c package_name.deb <span class="comment">#查找已经下载但末安装的 package.deb 软件包包含哪些文件</span></div><div class="line">dpkg -L package <span class="comment">#查找已经安装 package 软件包包含哪些文件</span></div><div class="line">apt-file show pattern <span class="comment">#查找 pattern 软件包(可以是安装了也可以是没有安装)包含哪些文件</span></div></pre></td></tr></table></figure>
+<h3 id="下载软件包"><a href="#下载软件包" class="headerlink" title="下载软件包"></a>下载软件包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install package <span class="_">-d</span> <span class="comment">#下载软件包</span></div><div class="line">aptitude download pattern <span class="comment">#同上，不同的是下载的是符合 pattern 的软件包，后面不再指出</span></div></pre></td></tr></table></figure>
+<h3 id="安装软件包"><a href="#安装软件包" class="headerlink" title="安装软件包"></a>安装软件包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">dpkg -i package_name.deb <span class="comment">#安装本地软件包，不解决依赖关系</span></div><div class="line">apt-get install package <span class="comment">#在线安装软件包</span></div><div class="line">aptitude install pattern <span class="comment">#同上</span></div><div class="line"></div><div class="line">apt-get install package --reinstall <span class="comment">#重新安装软件包</span></div><div class="line">apitude reinstall package <span class="comment">#同上</span></div></pre></td></tr></table></figure>
+<h3 id="移除软件包"><a href="#移除软件包" class="headerlink" title="移除软件包"></a>移除软件包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">dpkg -r package <span class="comment">#删除软件包</span></div><div class="line">apt-get remove package <span class="comment">#同上</span></div><div class="line">aptitude remove package <span class="comment">#同上</span></div><div class="line"></div><div class="line">dpkg -P <span class="comment">#删除软件包及配置文件</span></div><div class="line">apt-get remove package --purge <span class="comment">#删除软件包及配置文件</span></div><div class="line">apitude purge pattern <span class="comment">#同上</span></div></pre></td></tr></table></figure>
+<h3 id="自动移除软件包"><a href="#自动移除软件包" class="headerlink" title="自动移除软件包"></a>自动移除软件包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get autoremove <span class="comment">#删除不再需要的软件包。aptitude 没有，它会自动解决这件事</span></div></pre></td></tr></table></figure>
+<h3 id="清除下载的软件包"><a href="#清除下载的软件包" class="headerlink" title="清除下载的软件包"></a>清除下载的软件包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">apt-get clean <span class="comment">#清除 /var/cache/apt/archives 目录</span></div><div class="line">aptitude clean <span class="comment">#同上</span></div><div class="line"></div><div class="line">apt-get autoclean <span class="comment">#清除 /var/cache/apt/archives 目录，不过只清理过时的包</span></div><div class="line">aptitude autoclean <span class="comment">#同上</span></div></pre></td></tr></table></figure>
+<h3 id="更新源"><a href="#更新源" class="headerlink" title="更新源"></a>更新源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get update <span class="comment">#更新源</span></div><div class="line">aptitude update <span class="comment">#同上</span></div></pre></td></tr></table></figure>
+<h3 id="更新系统"><a href="#更新系统" class="headerlink" title="更新系统"></a>更新系统</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">apt-get upgrade <span class="comment">#更新已经安装的软件包</span></div><div class="line">aptitude safe-upgrade <span class="comment">#同上</span></div><div class="line">apt-get dist-upgrade <span class="comment">#升级系统</span></div><div class="line">aptitude full-upgrade <span class="comment">#同上</span></div></pre></td></tr></table></figure>
+<h1 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h1><h2 id="目标-3"><a href="#目标-3" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>远程控制linux</li>
+<li>Shell基本命令</li>
+</ul>
+<h2 id="内容-3"><a href="#内容-3" class="headerlink" title="内容"></a>内容</h2><ul>
+<li>简介<ul>
+<li>OpenSSH is a freely available version of the Secure Shell (SSH) protocol family of tools for remotely controlling, or transferring files between, computers. Traditional tools used to accomplish these functions, such as <code>telnet</code> or <code>rcp</code>, are <strong>insecure</strong> and <strong>transmit the user’s password in cleartext when used</strong>. OpenSSH provides a server daemon and client tools to facilitate <strong>secure</strong>, <strong>encrypted</strong> remote control and file transfer operations, effectively replacing the legacy tools.</li>
+<li>OpenSSH服务器组组件<code>sshd</code>持续监听来自任何客户端工具的连接请求。当一个连接请求发生时，<code>sshd</code>根据客户端连接的类型来设置当前连接。例如，如果远程计算机是通过 ssh 客户端应用程序来连接的话，OpenSSH 服务器将在认证之后设置一个远程控制会话。如果一个远程用户通过 scp 来连接 OpenSSH 服务器，OpenSSH 服务器将在认证之后开始服务器和客户机之间的安全文件拷贝。OpenSSH 可以支持多种认证模式，包括纯密码、公钥以及Kerberos票据。</li>
+<li>参考<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="external">SSH原理与运用（一）</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html" target="_blank" rel="external">SSH原理与运用（二）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>安装<ul>
+<li>ubuntu默认并没有安装ssh服务，如果通过ssh链接ubuntu，需要自己手动安装ssh-server</li>
+<li>安装客户端:<ul>
+<li><code>sudo apt-get install openssh-client</code></li>
+<li>通过在bash中执行<code>ssh</code>验证客户端是否安装成功</li>
+</ul>
+</li>
+<li>安装服务端:<ul>
+<li><code>sudo apt-get install openssh-server</code></li>
+<li>通过在bash中执行<code>ps -e |grep ssh</code>验证服务是否安装成功</li>
+<li>配置服务端<ul>
+<li>配置文件保存在<code>/etc/ssh/sshd_config</code></li>
+<li>查看手册通过<code>man sshd_config</code></li>
+<li>配置完成后重启服务通过<code>sudo service ssh restart</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>参考<ul>
+<li><a href="https://help.ubuntu.com/lts/serverguide/openssh-server.html" target="_blank" rel="external">OpenSSH-Server(Ubuntu Server Document)</a></li>
+<li><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-linux" target="_blank" rel="external">Generate a new ssh key and adding it to ssh agent</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>终端与本地文件的传输，具体用法见 <strong>Shell基本命令</strong><ul>
+<li><code>scp</code></li>
+<li><code>sftp</code></li>
+<li><code>sshfs</code></li>
+<li><code>rsync</code></li>
+</ul>
+</li>
+<li>了解Linux下的语言编码、文件编码、终端编码之间的关系<ul>
+<li><a href="http://blog.sina.com.cn/s/blog_6fe0d70d0101du41.html" target="_blank" rel="external">Linux下查看文件编码，文件或文件名编码格式转换</a></li>
+<li><a href="http://www.mutouxiaogui.cn/blog/?p=21" target="_blank" rel="external">Linux中文乱码解决办法</a></li>
+<li><a href="http://skypegnu1.blog.51cto.com/8991766/1545449" target="_blank" rel="external">Linux终端中文显示乱码</a></li>
+</ul>
+</li>
+<li>参考：<ul>
+<li><a href="http://cssor.com/mac-ssh-auto-login-server.html" target="_blank" rel="external">mac下SSH免密码登录远程服务器</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/" target="_blank" rel="external">让进程在断开SSH连接后依然保持运行</a></li>
+<li><a href="https://help.ubuntu.com/lts/serverguide/openssh-server.html" target="_blank" rel="external">Ubuntu Document - OpenSSH 服务器</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Shell基本命令-2"><a href="#Shell基本命令-2" class="headerlink" title="Shell基本命令"></a>Shell基本命令</h2><h3 id="SSH-1"><a href="#SSH-1" class="headerlink" title="SSH"></a>SSH</h3><ul>
+<li>参考<ul>
+<li><a href="http://os.51cto.com/art/201011/235252.htm" target="_blank" rel="external">25个必须记住的SSH命令</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="本地和远程操作系统之间拷贝文件-scp-sftp-sshfs-rsync"><a href="#本地和远程操作系统之间拷贝文件-scp-sftp-sshfs-rsync" class="headerlink" title="本地和远程操作系统之间拷贝文件: scp, sftp, sshfs, rsync"></a>本地和远程操作系统之间拷贝文件: <code>scp</code>, <code>sftp</code>, <code>sshfs</code>, <code>rsync</code></h3><ul>
+<li>参考<ul>
+<li><a href="http://os.51cto.com/art/201003/187301.htm" target="_blank" rel="external">详解linux scp命令的应用</a></li>
+<li><a href="http://unix.stackexchange.com/questions/106480/how-to-copy-files-from-one-machine-to-another-using-ssh" target="_blank" rel="external">how-to-copy-files-from-one-machine-to-another-using-ssh</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="Record-a-shell-session-script"><a href="#Record-a-shell-session-script" class="headerlink" title="Record a shell session: script"></a>Record a shell session: <code>script</code></h3><h3 id="Convert-linux-and-macos-files-to-windows-format-todos-fromdos"><a href="#Convert-linux-and-macos-files-to-windows-format-todos-fromdos" class="headerlink" title="Convert linux and macos files to windows format: todos, fromdos"></a>Convert linux and macos files to windows format: <code>todos</code>, <code>fromdos</code></h3><h2 id="练习-2"><a href="#练习-2" class="headerlink" title="练习"></a>练习</h2><h3 id="安装SSH-Server或者SSH-Client"><a href="#安装SSH-Server或者SSH-Client" class="headerlink" title="安装SSH Server或者SSH Client"></a>安装SSH Server或者SSH Client</h3><h3 id="在客户端操作系统上通过SSH连接Ubuntu-Server"><a href="#在客户端操作系统上通过SSH连接Ubuntu-Server" class="headerlink" title="在客户端操作系统上通过SSH连接Ubuntu Server"></a>在客户端操作系统上通过SSH连接Ubuntu Server</h3><ul>
+<li>Mac OS X上使用Terminal</li>
+<li>Windows上使用Putty、Xshell</li>
+<li>Ubuntu上安装openssh-client</li>
+</ul>
+<h3 id="通过scp向server传送文件"><a href="#通过scp向server传送文件" class="headerlink" title="通过scp向server传送文件"></a>通过scp向server传送文件</h3><h3 id="通过scp从server获取文件"><a href="#通过scp从server获取文件" class="headerlink" title="通过scp从server获取文件"></a>通过scp从server获取文件</h3><h1 id="Basic-Vim-Usage"><a href="#Basic-Vim-Usage" class="headerlink" title="Basic Vim Usage"></a>Basic Vim Usage</h1><h2 id="目标-4"><a href="#目标-4" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>掌握Vim基本操作</li>
+</ul>
+<h2 id="熟悉Vim"><a href="#熟悉Vim" class="headerlink" title="熟悉Vim"></a>熟悉Vim</h2><ul>
+<li>阅读<a href="./vim基本操作.md">vim基本操作</a></li>
+</ul>
+<h1 id="Advanced-Vim-Usage"><a href="#Advanced-Vim-Usage" class="headerlink" title="Advanced Vim Usage"></a>Advanced Vim Usage</h1><p>//todo: 高级Vim用法</p>
+<h1 id="File-Directory-User-User-Group-Authority"><a href="#File-Directory-User-User-Group-Authority" class="headerlink" title="File, Directory, User, User Group, Authority"></a>File, Directory, User, User Group, Authority</h1><h2 id="目标-5"><a href="#目标-5" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>文件、目录、用户、用户组、权限</li>
+<li>Shell基本命令</li>
+</ul>
+<h2 id="内容-4"><a href="#内容-4" class="headerlink" title="内容"></a>内容</h2><ul>
+<li>Linux下的用户与组的关系、如何管理用户和组<ul>
+<li><a href="http://www.chinaunix.net/old_jh/4/438660.html" target="_blank" rel="external">Linux用户和用户组管理</a></li>
+<li><a href="http://ixdba.blog.51cto.com/2895551/531787/" target="_blank" rel="external">浅谈Linux用户权限管理之一（用户与组的概念）</a></li>
+<li><a href="http://ixdba.blog.51cto.com/2895551/531793" target="_blank" rel="external">浅谈Linux用户权限管理之二（用户管理工具）</a></li>
+<li><a href="http://ixdba.blog.51cto.com/2895551/531799" target="_blank" rel="external">浅谈Linux用户权限管理之三（文件与权限的设定）</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Users_and_groups" target="_blank" rel="external">Users and Groups</a></li>
+<li><a href="http://www.cyberciti.biz/faq/linux-show-groups-for-user/" target="_blank" rel="external">Linux: Show The Groups a User Is In</a></li>
+</ul>
+</li>
+<li>文件及目录的权限及含义，如何快速计算目录权限<ul>
+<li><code>chmod</code>: change file modes or Access Control Lists</li>
+<li><code>chown</code>: change file owner or group</li>
+<li><code>ls -l</code>: display file permissions</li>
+<li><code>cd</code>: <a href="http://www.cnblogs.com/peida/archive/2012/10/24/2736501.html" target="_blank" rel="external">每天一个linux命令(2)：cd命令</a></li>
+<li>目录访问权限一些特殊的地方<ul>
+<li>Execute permission is redefined for a directory: It means that you can cd into the directory and/or examine files that you have permission to read from in the directory. It has nothing to do with executing a file.</li>
+</ul>
+</li>
+<li>理解ACL</li>
+</ul>
+</li>
+<li>系统自带的特殊目录及其作用<ul>
+<li>PG2UL, page 213</li>
+<li><a href="http://blog.chinaunix.net/uid-30093414-id-4797285.html" target="_blank" rel="external">Linux系统默认目录</a></li>
+<li><a href="http://www.cnblogs.com/CraryPrimitiveMan/p/4444037.html" target="_blank" rel="external">Linux的学习–系统目录</a></li>
+</ul>
+</li>
+<li>理解硬链接（hard link）和符号链接（Symbolic link）</li>
+<li>文件类型与扩展名<ul>
+<li><a href="http://www.cnblogs.com/peida/archive/2012/11/22/2781912.html" target="_blank" rel="external">Linux文件类型与扩展名</a></li>
+<li>PG2UL, page 501, Device Special Files</li>
+</ul>
+</li>
+<li>Obtaining user and system information<ul>
+<li><code>who</code>: list users on the system</li>
+<li><code>finger</code>: list users on the system</li>
+<li><code>w</code>: list users on the system</li>
+<li><code>hostname</code>: display the system name</li>
+</ul>
+</li>
+</ul>
+<h1 id="Compress-and-Uncompress-Files"><a href="#Compress-and-Uncompress-Files" class="headerlink" title="Compress and Uncompress Files"></a>Compress and Uncompress Files</h1><h2 id="目标-6"><a href="#目标-6" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>熟悉文件的压缩和解压</li>
+</ul>
+<h2 id="内容-5"><a href="#内容-5" class="headerlink" title="内容"></a>内容</h2><p>阅读PG2UL， page 174, Compressing and archiving files</p>
+<p><a href="http://www.zhihu.com/question/26026741" target="_blank" rel="external">rar tar gz zip 7z 有什么区别?</a>：</p>
+<blockquote>
+<p>tar是Linux常见的一种归档文件（原生不包括压缩功能）<br>gzip是gnu/Linux的一种压缩文件工具，算法是基于 DEFLATE，文件是gz，可以和tar组合。<br>zip是一种规范开放的压缩文件，算法不定，但主要是用 DEFLATE<br>rar的算法专有，但发行时附送解码器允许解码器再开发，编码器专有<br>7zip和zip差不多，算法不定，主要用bzip2和lzma，而且完全开源。<br>zip和7z更像是压缩容器，因为算法不是格式固定，允许支持其他压缩算法<br>The zip and unzip utilities are compatible with PKZIP, a Windows program that compresses and archives files.</p>
+<p>大小与区别<br>tar是无压缩的，比压缩效率，gz的算法最原始，所以较低，其次zip，接着rar，7z两个主要算法基本上略优于rar，基本不相上下。</p>
+<p>优缺点<br>在Linux里面，tar一般和其他没有文件管理的压缩算法文件结合使用，用tar打包整个文件目录结构成一个文件，再用gz，bzip等压缩算法压缩成一次。也是Linux常见的压缩归档的处理方法。</p>
+<p>zip相对比较老，格式规范可知，所以积累了各种加解压实现，有较好的兼容性，不过现有文件格式相对而言比较落后，还有会有文件名乱码问题（因为文件名是用非Unicode编码）<br>rar和7z就新些，所用算法压缩效率也好很多，兼容性不及zip，不过rar的编码器有专利，但可以不制作编码器的情况使用或者再开发发行版的解码器（所以其他压缩管理工具可以调用rar的解码器来解压rar，但不能加压，百度云的在线解压rar可能是使用或者再开发过unrar文件），7z的文件和管理程序都是开源的，文件格式也比较好（支持Unicode文件名），两个主要压缩算法的性能都很好，只是差何时能普及而取代zip而已。</p>
+</blockquote>
+<ul>
+<li>bzip2压缩<ul>
+<li><code>bzip2</code>: compress a file</li>
+<li><code>bunzip2</code>: uncompress a file</li>
+<li><code>bzcat</code>: decompresses the compressed data and displays the decompressed data</li>
+<li><code>bzip2recover</code>: supports limited data recovery from media errors</li>
+</ul>
+</li>
+<li>gzip压缩<ul>
+<li><code>gzip</code>: compresses a file</li>
+<li><code>gunzip</code></li>
+<li><code>zcat</code></li>
+</ul>
+</li>
+<li>xz压缩<ul>
+<li><a href="http://tukaani.org/xz/" target="_blank" rel="external">XZ utils</a> : XZ Utils is free general-purpose data compression software with high compression ratio. XZ Utils were written for POSIX-like systems, but also work on some not-so-POSIX systems. XZ Utils are the successor to LZMA Utils. The core of the XZ Utils compression code is based on LZMA SDK, but it has been modified quite a lot to be suitable for XZ Utils. The primary compression algorithm is currently LZMA2, which is used inside the .xz container format. With typical files, XZ Utils create 30 % smaller output than gzip and 15 % smaller output than bzip2.</li>
+<li><code>xz</code></li>
+<li><code>unxz</code></li>
+<li><code>xzcat</code></li>
+</ul>
+</li>
+<li>7zip压缩<ul>
+<li><a href="http://www.7-zip.org/download.html" target="_blank" rel="external">7zip</a></li>
+<li>linux、freebsd、macos下的port是p7zip，ubuntu下执行<code>sudo apt-get install p7zip-full</code>安装</li>
+<li>参考<ul>
+<li><a href="http://www.linuxdiyf.com/viewarticle.php?id=193969" target="_blank" rel="external">linux下的压缩解压软件7zip</a></li>
+<li><a href="https://www.ibm.com/developerworks/community/blogs/6e6f6d1b-95c3-46df-8a26-b7efd8ee4b57/entry/how_to_use_7zip_on_linux_command_line144?lang=en" target="_blank" rel="external">How to use 7zip on Linux command Line</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/P7zip" target="_blank" rel="external">p7zip - archlinux document</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>zip压缩  <ul>
+<li>zip: 参考<a href="http://linux.about.com/od/commands/l/blcmdl1_zip.htm" target="_blank" rel="external">Linux zip command</a></li>
+<li>unzip: 参考<a href="http://linux.about.com/od/commands/l/blcmdl1_unzip.htm" target="_blank" rel="external">Linux unzip command</a></li>
+</ul>
+</li>
+<li>rar压缩<ul>
+<li>unrar: 参考<a href="http://www.lifelinux.com/how-to-extract-rar-files-under-linux/" target="_blank" rel="external">How To Extract RAR Files Under Linux</a></li>
+</ul>
+</li>
+<li><code>tar</code>: manipulate tape archives</li>
+</ul>
+<h2 id="练习-3"><a href="#练习-3" class="headerlink" title="练习"></a>练习</h2><h3 id="bzip2-bunzip2-bzcat命令练习"><a href="#bzip2-bunzip2-bzcat命令练习" class="headerlink" title="bzip2, bunzip2, bzcat命令练习"></a><code>bzip2</code>, <code>bunzip2</code>, <code>bzcat</code>命令练习</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="comment"># 使用bzip2压缩文件默认会自动删除原文件，生成的压缩文件名是"[原文件名（包括扩展名）].bz2"</span></div><div class="line">$ bzip2 -v letter_e</div><div class="line">letter_e: 11680.00:1, 0.001 bits/byte, 99.99% saved, 584000 <span class="keyword">in</span>, 50 out.</div><div class="line"></div><div class="line">$ ls <span class="_">-l</span></div><div class="line">-rw-rw-r-- 1 sam sam 50 2010-03-01 22:31 letter_e.bz2</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># 使用bunzip2解压文件会自动删除原压缩文件，原文件名去掉末尾的".bz2"就是生成的解压缩文件名</span></div><div class="line">$ bunzip -v letter_e.bz2</div><div class="line"></div><div class="line">$ bzcat letter_e.bz2 | head -2</div><div class="line">eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</div><div class="line">eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</div></pre></td></tr></table></figure>
+<h3 id="tar命令练习"><a href="#tar命令练习" class="headerlink" title="tar命令练习"></a><code>tar</code>命令练习</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="comment"># === Combine files into one file ===</span></div><div class="line"></div><div class="line">$ ls <span class="_">-l</span> g b d</div><div class="line">-rw-r--r-- 1 zach other 1178 2010-08-20 14:16 b</div><div class="line">-rw-r--r-- 1 zach zach  3783 2010-08-20 14:17 d</div><div class="line">-rw-r--r-- 1 zach zach  1302 2010-08-20 14:16 g</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># –c (create), –v (verbose), and –f (write to or read from a file)</span></div><div class="line">$ tar -cvf all.tar g b d</div><div class="line">g</div><div class="line">b</div><div class="line">d</div><div class="line"></div><div class="line">$ ls <span class="_">-l</span> all.tar</div><div class="line">-rw-r--r-- 1 zach zach  9728 2010-08-20 14:17 all.tar</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># –t option to display a table of contents for the archive</span></div><div class="line">$ tar -tvf all.tar</div><div class="line">-rw-r--r-- zach /zach    1302 2010-08-20 14:16 g</div><div class="line">-rw-r--r-- zach /other   1178 2010-08-20 14:16 b</div><div class="line">-rw-r--r-- zach /zach    3783 2010-08-20 14:17 d</div><div class="line"></div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># === Extract files from combined file ===</span></div><div class="line"></div><div class="line">$ ls <span class="_">-l</span> mak*</div><div class="line">-rw-r--r-- 1 sam sam 1564560 2010-04-12 15:51 make-3.81.tar.gz</div><div class="line"></div><div class="line">$ gunzip mak*</div><div class="line">$ ls <span class="_">-l</span> mak*</div><div class="line">-rw-r--r-- 1 sam sam 6072320 2010-04-12 15:51 make-3.81.tar</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># –x to extract files from a tar archive</span></div><div class="line">$ tar -xvf mak*</div><div class="line">make-3.81/</div><div class="line">make-3.81/config/</div><div class="line">make-3.81/config/dospaths.m4</div><div class="line">...</div><div class="line">make-3.81/tests/run_make_tests.pl</div><div class="line">make-3.81/tests/test_driver.pl</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># ===combine the gunzip and tar commands===</span></div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># The –c option causes gunzip to send its output through the pipe instead of creating a file. The final hyphen (–) causes tar to read from standard input.</span></div><div class="line">$ gunzip -c make-3.81.tar.gz | tar -xvf -</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># –z option to cause tar to call gunzip</span></div><div class="line">$ tar -xvzf make-3.81.tar.gz</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># -j option to cause tar to call bzip2</span></div><div class="line">$ tar -xvjf make-3.81.tar.bz2</div></pre></td></tr></table></figure>
+<h1 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h1><h2 id="目标-7"><a href="#目标-7" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>进程</li>
+<li>进程控制</li>
+<li>守护进程（daemon）和服务（service）</li>
+</ul>
+<h2 id="内容-6"><a href="#内容-6" class="headerlink" title="内容"></a>内容</h2><ul>
+<li>基础概念<ul>
+<li>进程<ul>
+<li>进程号、父子进程关系</li>
+<li>僵尸进程: <a href="http://coolshell.cn/articles/656.html" target="_blank" rel="external">Linux僵尸进程</a></li>
+<li>孤儿进程: <a href="http://www.cnblogs.com/anker/p/3271773.html" target="_blank" rel="external">孤儿进程与僵尸进程</a></li>
+<li><a href="http://www.cnblogs.com/taobataoma/archive/2007/08/30/875743.html" target="_blank" rel="external">信号</a></li>
+</ul>
+</li>
+<li>守护进程和服务<ul>
+<li>概念上的区别：系统为了某些功能必须要提供一些服务 (不论是系统本身还是网络方面)，这个服务就称为 service。但是service的提供总是需要程序的运行吧！达成这个service的程序我们就称呼他为daemon！举例来说，达成循环型例行性工作排程服务 (service) 的程序为 crond 这个 daemon ！</li>
+<li>daemon主要分为：<ul>
+<li>stand_alone，可以自行单独启动服务</li>
+<li>super daemon，由一个特殊的 daemon 来统一管理</li>
+</ul>
+</li>
+<li>参考<ul>
+<li>阅读<a href="http://vbird.dic.ksu.edu.tw/linux_basic/0560daemons.php" target="_blank" rel="external">鸟哥的Linux私房菜-认识系统服务</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实践<ul>
+<li>通过/proc查看系统运行信息<ul>
+<li><a href="http://www.cnblogs.com/cute/archive/2011/04/20/2022280.html" target="_blank" rel="external">深入理解linux系统下proc文件系统内容</a></li>
+<li><a href="http://www.ibm.com/developerworks/cn/linux/l-proc.html" target="_blank" rel="external">使用 /proc 文件系统来访问 Linux 内核的内容</a></li>
+</ul>
+</li>
+<li>观察系统启动的服务<ul>
+<li><code>netstat -tulp</code>: 找出目前系统开启的『网络服务』</li>
+<li><code>netstat -lnp</code>: 找出所有的有监听网络的服务 (包含 socket 状态)</li>
+<li><code>service --status-all</code>: 观察所有的服务状态</li>
+</ul>
+</li>
+<li>通过<code>/etc/init.d</code>目录下的脚本控制服务<ul>
+<li>用法：<code>Usage: /etc/init.d/networking {start|stop|reload|restart|force-reload}</code></li>
+</ul>
+</li>
+<li>通过<code>service</code>命令控制服务<ul>
+<li><code>sudo service [service name] {start|stop|restart|status}</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Shell基本命令-3"><a href="#Shell基本命令-3" class="headerlink" title="Shell基本命令"></a>Shell基本命令</h2><ul>
+<li><code>vmstat</code>: Report virtual memory statistics</li>
+<li><code>ps</code>: 使用PS查看进程信息，了解每一列的含义，掌握其参数<ul>
+<li>参考 <a href="http://www.cnblogs.com/peida/archive/2012/12/19/2824418.html" target="_blank" rel="external">每天一个linux命令（41）：ps命令</a></li>
+</ul>
+</li>
+<li><code>top</code>: 使用top查看系统负载，了解每一列的含义<ul>
+<li>参考 <a href="http://www.cnblogs.com/peida/archive/2012/12/24/2831353.html" target="_blank" rel="external">每天一个linux命令（44）：top命令</a></li>
+</ul>
+</li>
+<li><code>htop</code>: an interactive process viewer for Linux<ul>
+<li><a href="http://www.cnblogs.com/mchina/archive/2013/03/15/2858041.html" target="_blank" rel="external">Linux下取代top的进程管理工具 htop</a></li>
+<li><a href="http://hisham.hm/htop/index.php?page=main" target="_blank" rel="external">htop - an interactive process viewer for Linux</a></li>
+</ul>
+</li>
+<li><code>kill</code>: 通过kill给进程发送信号<ul>
+<li>参考<a href="http://www.cnblogs.com/peida/archive/2012/12/20/2825837.html" target="_blank" rel="external">每天一个linux命令（42）：kill命令</a></li>
+<li><a href="http://blog.csdn.net/ljianhui/article/details/10128731" target="_blank" rel="external">Linux进程间通信——使用信号</a></li>
+</ul>
+</li>
+<li><code>lsof</code>: lsof（list open files）是一个列出当前系统打开文件的工具。在linux环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。所以如传输控制协议 (TCP) 和用户数据报协议 (UDP) 套接字等，系统在后台都为该应用程序分配了一个文件描述符，无论这个文件的本质如何，该文件描述符为应用程序与基础操作系统之间的交互提供了通用接口。因为应用程序打开文件的描述符列表提供了大量关于这个应用程序本身的信息，因此通过lsof工具能够查看这个列表对系统监测以及排错将是很有帮助的。<ul>
+<li>参考<a href="http://www.cnblogs.com/peida/archive/2013/02/26/2932972.html" target="_blank" rel="external">每天一个linux命令（51）：lsof命令</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="Basic-Network-Management"><a href="#Basic-Network-Management" class="headerlink" title="Basic Network Management"></a>Basic Network Management</h1><h2 id="目标-8"><a href="#目标-8" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>查看网络状态与基本网络管理</li>
+</ul>
+<h2 id="Basic-Network-Management-1"><a href="#Basic-Network-Management-1" class="headerlink" title="Basic Network Management"></a>Basic Network Management</h2><ul>
+<li>概念<ul>
+<li><a href="http://vbird.dic.ksu.edu.tw/linux_server/0110network_basic.php" target="_blank" rel="external">基础网络概念</a></li>
+<li>网络协议的层次结构<ul>
+<li>参考<a href="http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html" target="_blank" rel="external">互联网协议入门（一）</a></li>
+<li>参考<a href="http://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html" target="_blank" rel="external">互联网协议入门（二）</a></li>
+<li>参考<a href="./file/TCP-IP_Network_Protocol_Diagram.pdf">TCP IP网络协议图</a></li>
+</ul>
+</li>
+<li>IP协议，IP地址的分类，子网掩码<ul>
+<li><a href="http://linux.chinaunix.net/techdoc/net/2008/09/18/1033149.shtml" target="_blank" rel="external">如何理解ip路由和操作linux的路由表</a></li>
+</ul>
+</li>
+<li>TCP协议</li>
+<li>UDP协议</li>
+<li>PPP协议</li>
+</ul>
+</li>
+<li>网络工具<ul>
+<li>使用Vim修改/etc/hosts</li>
+<li>常用文件传输方式及比较<ul>
+<li><a href="http://www.ibm.com/developerworks/cn/linux/l-cn-filetransfer/" target="_blank" rel="external">Linux 上的常用文件传输方式介绍与比较</a></li>
+<li><a href="http://blog.csdn.net/emili/article/details/6858818" target="_blank" rel="external">linux下不同服务器间数据传输(rcp,scp,rsync,ftp,sftp,lftp,wget,curl)</a></li>
+</ul>
+</li>
+<li><a href="http://linux.vbird.org/linux_server/0140networkcommand.php" target="_blank" rel="external">Linux常用网络指令</a></li>
+<li><a href="http://chrinux.blog.51cto.com/6466723/1188108" target="_blank" rel="external">linux网络配置命令之ifconfig、ip和route</a></li>
+<li><a href="http://www.computerhope.com/unix/uifconfi.htm" target="_blank" rel="external">Linux and Unix ifconfig command</a></li>
+<li><a href="http://superuser.com/questions/419659/iptables-vs-route" target="_blank" rel="external">iptables vs route</a></li>
+<li><a href="http://www.karlrupp.net/en/computer/nat_tutorial" target="_blank" rel="external">NAT - Network Address Translation</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Shell命令-1"><a href="#Shell命令-1" class="headerlink" title="Shell命令"></a>Shell命令</h2><ul>
+<li><code>ifconfig</code><ul>
+<li>参考<a href="http://www.cnblogs.com/peida/archive/2013/02/27/2934525.html" target="_blank" rel="external">每天一个linux命令（52）：ifconfig命令</a></li>
+<li>参考<a href="http://www.computerhope.com/unix/uifconfi.htm" target="_blank" rel="external">Linux and Unix - ifconfig command</a></li>
+</ul>
+</li>
+<li><code>telnet</code><ul>
+<li>参考<a href="http://www.computerhope.com/unix/utelnet.htm" target="_blank" rel="external">Linux and Unix - telnet command</a></li>
+</ul>
+</li>
+<li><code>ping</code>: use ICMP<ul>
+<li>参考<a href="http://www.ezloo.com/2007/05/ping_ttl.html" target="_blank" rel="external">ping结果中TTL是什么意思</a></li>
+<li>参考<a href="http://zhidao.baidu.com/question/13855241.html" target="_blank" rel="external">ping 命令详解</a></li>
+</ul>
+</li>
+<li><code>traceroute</code>: traces a route over the internet<ul>
+<li>参考<a href="http://www.cnblogs.com/peida/archive/2013/03/07/2947326.html" target="_blank" rel="external">每天一个linux命令（55）：traceroute命令</a></li>
+</ul>
+</li>
+<li><code>mtr</code>: ‘traceroute’ and ‘ping’ in a single tool<ul>
+<li>参考<a href="http://xukaizijian.blog.163.com/blog/static/1704331192011023259812/" target="_blank" rel="external">mtr命令详解</a></li>
+</ul>
+</li>
+<li><code>nslookup</code>, <code>host</code>, <code>dig</code>: DNS lookup utility<ul>
+<li>参考<a href="http://www.computerhope.com/unix/unslooku.htm" target="_blank" rel="external">Linux and Unix - nslookup command</a></li>
+<li>参考<a href="http://www.computerhope.com/unix/host.htm" target="_blank" rel="external">Linux and Unix - host command</a></li>
+<li>参考<a href="http://www.computerhope.com/unix/dig.htm" target="_blank" rel="external">Linux and Unix - dig command</a></li>
+</ul>
+</li>
+<li><code>whois</code>: look up information about a internet site<ul>
+<li>参考<a href="http://www.computerhope.com/unix/uwhois.htm" target="_blank" rel="external">Linux and Unix - whois command</a></li>
+<li><a href="http://whois.chinaz.com/" target="_blank" rel="external">站长之家 - whois查询</a></li>
+<li><a href="https://who.godaddy.com/" target="_blank" rel="external">Godaddy whois查询</a></li>
+</ul>
+</li>
+<li><code>netstat</code>:<ul>
+<li>参考<a href="http://www.cnblogs.com/peida/archive/2013/03/08/2949194.html" target="_blank" rel="external">每天一个linux命令（56）：netstat命令</a></li>
+</ul>
+</li>
+<li><code>ip</code><ul>
+<li>参考<a href="http://www.computerhope.com/unix/ip.htm" target="_blank" rel="external">Linux and Unix - ip command</a></li>
+</ul>
+</li>
+<li><code>iptables</code>: iptables is a user-space application program that allows a system administrator to configure the tables provided by the Linux kernel firewall (implemented as different Netfilter modules) and the chains and rules it stores. Different kernel modules and programs are currently used for different protocols; iptables applies to IPv4, ip6tables to IPv6, arptables to ARP, and ebtables to Ethernet frames.<ul>
+<li>参考<a href="http://baike.baidu.com/view/504557.htm#1_1" target="_blank" rel="external">百度百科-iptables</a></li>
+<li>参考<a href="https://en.wiki2.org/wiki/Iptables" target="_blank" rel="external">wikipedia - iptables</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="Writing-Shell-Scripts"><a href="#Writing-Shell-Scripts" class="headerlink" title="Writing Shell Scripts"></a>Writing Shell Scripts</h1><h2 id="目标-9"><a href="#目标-9" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>Shell的基本概念及启动过程</li>
+<li>编写Shell脚本</li>
+<li>参考<ul>
+<li><a href="http://www.gnu.org/software/bash/manual/bashref.html" target="_blank" rel="external">Gnu Bash Reference</a></li>
+<li><a href="https://github.com/jlevy/the-art-of-command-line" target="_blank" rel="external">The art of command line</a></li>
+<li><a href="https://github.com/alebcay/awesome-shell" target="_blank" rel="external">Awesome Shell</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="交互式shell和非交互式shell、登录shell和非登录shell的区别"><a href="#交互式shell和非交互式shell、登录shell和非登录shell的区别" class="headerlink" title="交互式shell和非交互式shell、登录shell和非登录shell的区别"></a>交互式shell和非交互式shell、登录shell和非登录shell的区别</h3><blockquote>
+<p>参考<a href="http://smilejay.com/2012/10/interactive-shell-login-shell/" target="_blank" rel="external">交互式shell和非交互式shell、登录shell和非登录shell的区别</a></p>
+</blockquote>
+<p>首先，这是两个不同的维度来划分的，一个是是否交互式，另一个是是否登录。</p>
+<p>交互式模式就是在终端上执行，shell等待你的输入，并且立即执行你提交的命令。这种模式被称作交互式是因为shell与用户进行交互。<br>这种模式也是大多数用户非常熟悉的：登录、执行一些命令、退出。当你退出后，shell也终止了。<br>shell也可以运行在另外一种模式：非交互式模式，以shell script(非交互)方式执行。<br>在这种模式下，shell不与你进行交互，而是读取存放在文件中的命令，并且执行它们。当它读到文件的结尾EOF，shell也就终止了。</p>
+<p>可以通过打印“$-”变量的值（代表着当前shell的选项标志），查看其中的“i”选项（表示interactive shell）来区分交互式与非交互式shell。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> $-</div><div class="line">himBH</div><div class="line"></div><div class="line">$ ./test.sh</div><div class="line"><span class="built_in">echo</span> $-</div><div class="line">hB</div></pre></td></tr></table></figure>
+<ul>
+<li>登录shell：是需要用户名、密码登录后才能进入的shell（或者通过”–login”选项生成的shell）。</li>
+<li>非登录shell：当然就不需要输入用户名和密码即可打开的Shell，例如：直接命令“bash”就是打开一个新的非登录shell，在Gnome或KDE中打开一个“终端”（terminal）窗口程序也是一个非登录shell。</li>
+<li>执行exit命令，退出一个shell（登录或非登录shell）；</li>
+<li>执行logout命令，退出登录shell（不能退出非登录shell）。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ bash --login</div><div class="line">$ <span class="built_in">logout</span></div><div class="line">$ bash --login</div><div class="line">$ <span class="built_in">exit</span></div><div class="line"><span class="built_in">logout</span></div><div class="line"></div><div class="line">$ bash</div><div class="line">$ <span class="built_in">logout</span></div><div class="line">bash: <span class="built_in">logout</span>: not login shell: use <span class="string">'exit'</span></div><div class="line">$ <span class="built_in">exit</span></div><div class="line"><span class="built_in">exit</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>man bash: A login shell is one whose first character of argument zero is a -, or one started with the –login option.</p>
+</blockquote>
+<p>bash是 login shell 时，其进程名为”-bash“ 而不是”bash”。 比如下面的命令行演示：</p>
+<p><em>在 login shell 中：</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> <span class="variable">$0</span></div><div class="line">-bash</div><div class="line">$ ps -ef | grep <span class="string">'\-bash'</span> | grep -v grep</div><div class="line">root     16823 16821  0 May06 pts/0    00:00:00 -bash</div><div class="line">perf     21135 21134  0 May07 pts/1    00:00:00 -bash</div></pre></td></tr></table></figure>
+<p><em>在一个非登陆shell中：</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> <span class="variable">$0</span></div><div class="line">/bin/bash</div><div class="line">$ ps -ef | grep <span class="string">'\-bash'</span> | grep -v grep</div><div class="line">$</div></pre></td></tr></table></figure>
+<p>对于Bash来说，登录shell（包括交互式登录shell和使用<code>–login</code>选项的非交互shell），它会首先读取和执行<code>/etc/profile</code>全局配置文件中的命令，然后依次查找<code>~/.bash_profile</code>、<code>~/.bash_login</code> 和 <code>~/.profile</code>这三个配置文件，读取和执行<strong>这三个中的第一个存在且可读的文件</strong>中命令。除非被<code>–noprofile</code>选项禁止了。</p>
+<p>在非登录shell里，只读取<code>~/.bashrc</code>（和<code>/etc/bash.bashrc</code>、<code>/etc/bashrc</code>）文件，不同的发行版里面可能有所不同，如RHEL6.3中非登录shell仅执行了<code>~/.bashrc</code>文件（没有执行<code>/etc/bashrc</code>），而KUbuntu10.04中却依次执行了<code>/etc/bash.bashrc</code> 和 <code>~/.bashrc</code> 文件。</p>
+<p>对于这些规则，可以直接在相应的配置文件中加一些<code>echo</code>命令来验证其真实性。</p>
+<h3 id="如何让你的shell脚本更健壮和更可靠"><a href="#如何让你的shell脚本更健壮和更可靠" class="headerlink" title="如何让你的shell脚本更健壮和更可靠"></a>如何让你的shell脚本更健壮和更可靠</h3><p>请阅读：</p>
+<ul>
+<li><a href="http://redsymbol.net/articles/unofficial-bash-strict-mode/" target="_blank" rel="external">Use the Unofficial Bash Strict Mode (Unless You Looove Debugging)</a></li>
+<li><a href="http://redsymbol.net/articles/bash-exit-traps/" target="_blank" rel="external">How “Exit Traps” Can Make Your Bash Scripts Way More Robust And Reliable</a></li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><h4 id="常用系统变量"><a href="#常用系统变量" class="headerlink" title="常用系统变量"></a>常用系统变量</h4><ul>
+<li><code>$0</code>: 当前shell程序的名字</li>
+<li><code>$1</code>~<code>$9</code>: 命令行上的第一到第九个参数</li>
+<li><code>$#</code>: 命令行上的参数个数</li>
+<li><code>$*</code>: 命令行上的所有参数</li>
+<li><code>$@</code>: 分别用双引号引用命令行上的所有参数</li>
+<li><code>$$</code>: 当前进程的进程标识号(PID)</li>
+<li><code>$?</code>: 上一条命令的退出状态</li>
+<li><code>$!</code>: 最后一个后台进程的进程标识号</li>
+</ul>
+<h4 id="Builtin-commands-that-are-symbols"><a href="#Builtin-commands-that-are-symbols" class="headerlink" title="Builtin commands that are symbols"></a>Builtin commands that are symbols</h4><ul>
+<li><code>()</code>: subshell</li>
+<li><code>$()</code>: command substitution</li>
+<li><code>(())</code>: arithmetic evaluation</li>
+<li><code>$(())</code>: arithmetic expansion</li>
+<li><code>[]</code>: test command</li>
+<li><code>[[]]</code>: conditional expression</li>
+</ul>
+<h4 id="Control-Structures"><a href="#Control-Structures" class="headerlink" title="Control Structures"></a>Control Structures</h4><h5 id="if…else-pattern"><a href="#if…else-pattern" class="headerlink" title="if…else pattern"></a>if…else pattern</h5><p>pattern:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="built_in">test</span>-command</div><div class="line">    <span class="keyword">then</span></div><div class="line">        commands</div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+<p>example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> check arguments amounts</div><div class="line"><span class="keyword">if</span> [ <span class="variable">$#</span> <span class="_">-eq</span> 0 ]</div><div class="line">    <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"You must supply at least one argument."</span></div><div class="line">        <span class="built_in">exit</span> 1</div><div class="line"><span class="keyword">fi</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Program running..."</span></div><div class="line"></div><div class="line"><span class="built_in">echo</span> check whether file is an ordinary file</div><div class="line"><span class="keyword">if</span> [ <span class="_">-f</span> <span class="string">"<span class="variable">$1</span>"</span> ]</div><div class="line">    <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"<span class="variable">$1</span> is an ordinary file in the working directory"</span></div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"<span class="variable">$1</span> is NOT an ordinary file in the working directory"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+<h5 id="if…then…else-pattern"><a href="#if…then…else-pattern" class="headerlink" title="if…then…else pattern"></a>if…then…else pattern</h5><p>pattern:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="built_in">test</span>-command</div><div class="line">   <span class="keyword">then</span></div><div class="line">       commands</div><div class="line">   <span class="keyword">else</span></div><div class="line">       commands</div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+<p>example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> [ <span class="variable">$#</span> <span class="_">-eq</span> 0 ]</div><div class="line">    <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"Usage: out [-v] filenames..."</span> 1&gt;&amp;2</div><div class="line">        <span class="built_in">exit</span> 1</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> = <span class="string">"-v"</span> ]</div><div class="line">    <span class="keyword">then</span></div><div class="line">        <span class="built_in">shift</span></div><div class="line">        less -- <span class="string">"<span class="variable">$@</span>"</span></div><div class="line">    <span class="keyword">else</span></div><div class="line">        cat -- <span class="string">"<span class="variable">$@</span>"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+<h5 id="if…then…elif-pattern"><a href="#if…then…elif-pattern" class="headerlink" title="if…then…elif pattern"></a>if…then…elif pattern</h5><p>pattern:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="built_in">test</span>-command</div><div class="line">   <span class="keyword">then</span></div><div class="line">       commands</div><div class="line">   <span class="keyword">elif</span> <span class="built_in">test</span>-command</div><div class="line">   <span class="keyword">then</span></div><div class="line">       commands</div><div class="line">   ...</div><div class="line">   <span class="keyword">else</span></div><div class="line">       commands</div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+<p>example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> -n <span class="string">"word 1: "</span></div><div class="line"><span class="built_in">read</span> word1</div><div class="line"><span class="built_in">echo</span> -n <span class="string">"word 2: "</span></div><div class="line"><span class="built_in">read</span> word2</div><div class="line"><span class="built_in">echo</span> -n <span class="string">"word 3: "</span></div><div class="line"><span class="built_in">read</span> word3</div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$word1</span>"</span> = <span class="string">"<span class="variable">$word2</span>"</span> <span class="_">-a</span> <span class="string">"<span class="variable">$word2</span>"</span> = <span class="string">"<span class="variable">$word3</span>"</span> ]</div><div class="line">    <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"Match: words 1, 2, &amp; 3"</span></div><div class="line">    <span class="keyword">elif</span> [ <span class="string">"<span class="variable">$word1</span>"</span> = <span class="string">"<span class="variable">$word2</span>"</span> ]</div><div class="line">    <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"Match: words 1 &amp; 2"</span></div><div class="line">    <span class="keyword">elif</span> [ <span class="string">"<span class="variable">$word1</span>"</span> = <span class="string">"<span class="variable">$word3</span>"</span> ]</div><div class="line">    <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"Match: words 1 &amp; 3"</span></div><div class="line">    <span class="keyword">elif</span> [ <span class="string">"<span class="variable">$word2</span>"</span> = <span class="string">"<span class="variable">$word3</span>"</span> ]</div><div class="line">    <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"Match: words 2 &amp; 3"</span></div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"No Match"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+<h5 id="for…in-pattern"><a href="#for…in-pattern" class="headerlink" title="for…in pattern"></a>for…in pattern</h5><p>pattern:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> loop-index <span class="keyword">in</span> argument-list</div><div class="line"><span class="keyword">do</span></div><div class="line">    commands</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<p>example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> fruit <span class="keyword">in</span> apples oranges pears bananas</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$fruit</span>"</span></div><div class="line"><span class="keyword">done</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Task complete."</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> *</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="keyword">if</span> [ <span class="_">-d</span> <span class="string">"<span class="variable">$i</span>"</span> ]</div><div class="line">        <span class="keyword">then</span></div><div class="line">            <span class="built_in">echo</span> <span class="string">"<span class="variable">$i</span>"</span></div><div class="line">    <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<h5 id="for-pattern"><a href="#for-pattern" class="headerlink" title="for pattern"></a>for pattern</h5><p>the loop-index takes on the value of each of the command- line arguments, one at a time.</p>
+<p>pattern:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> loop-index</div><div class="line"><span class="keyword">do</span></div><div class="line">    commands</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<p>example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> [ <span class="variable">$#</span> <span class="_">-eq</span> 0 ]</div><div class="line">    <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"Usage: whos id..."</span> 1&gt;&amp;2</div><div class="line">        <span class="built_in">exit</span> 1</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> id</div><div class="line"><span class="keyword">do</span></div><div class="line">    mawk -F: <span class="string">'&#123;print $1, $5&#125;'</span> /etc/passwd |</div><div class="line">    grep -i <span class="string">"<span class="variable">$id</span>"</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<h5 id="while-pattern"><a href="#while-pattern" class="headerlink" title="while pattern"></a>while pattern</h5><p>pattern:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="built_in">test</span>-command</div><div class="line"><span class="keyword">do</span></div><div class="line">    commands</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<p>example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">number=0</div><div class="line"><span class="keyword">while</span> [ <span class="string">"<span class="variable">$number</span>"</span> <span class="_">-lt</span> 10 ]</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">echo</span> -n <span class="string">"<span class="variable">$number</span>"</span></div><div class="line">    ((number +=1))</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<h5 id="until-pattern"><a href="#until-pattern" class="headerlink" title="until pattern"></a>until pattern</h5><p>pattern:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">until <span class="built_in">test</span>-command</div><div class="line"><span class="keyword">do</span></div><div class="line">    commands</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<p>example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">secretname=zach</div><div class="line">name=noname</div><div class="line"><span class="built_in">echo</span> <span class="string">"Try to guess the secret name!"</span></div><div class="line"><span class="built_in">echo</span></div><div class="line">until [ <span class="string">"<span class="variable">$name</span>"</span> = <span class="string">"<span class="variable">$secretname</span>"</span> ]</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">echo</span> -n <span class="string">"Your guess: "</span></div><div class="line">    <span class="built_in">read</span> name</div><div class="line"><span class="keyword">done</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Very good."</span></div></pre></td></tr></table></figure>
+<h5 id="break-and-continue-pattern"><a href="#break-and-continue-pattern" class="headerlink" title="break and continue pattern"></a>break and continue pattern</h5><p>example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> index <span class="keyword">in</span> 1 2 3 4 5 6 7 8 9 10</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="keyword">if</span> [ <span class="variable">$index</span> -le 3 ] ; <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"continue"</span></div><div class="line">        <span class="built_in">continue</span></div><div class="line">    <span class="keyword">fi</span></div><div class="line"></div><div class="line">    <span class="built_in">echo</span> <span class="variable">$index</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span> [ <span class="variable">$index</span> -ge 8 ] ; <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"break"</span></div><div class="line">        <span class="built_in">break</span></div><div class="line">    <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<h5 id="case-pattern"><a href="#case-pattern" class="headerlink" title="case pattern"></a>case pattern</h5><p>pattern:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">case</span> <span class="built_in">test</span>-string <span class="keyword">in</span></div><div class="line">    pattern-1)</div><div class="line">        commands-1</div><div class="line">        ;;</div><div class="line">    pattern-2)</div><div class="line">        commands-2</div><div class="line">        ;;</div><div class="line">    pattern-3)</div><div class="line">        commands-3</div><div class="line">        ;;</div><div class="line"><span class="keyword">esac</span></div></pre></td></tr></table></figure>
+<p>example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> -n <span class="string">"Enter A, B, or C: "</span></div><div class="line"><span class="built_in">read</span> letter</div><div class="line"><span class="keyword">case</span> <span class="string">"<span class="variable">$letter</span>"</span> <span class="keyword">in</span></div><div class="line">    A)</div><div class="line">        <span class="built_in">echo</span> <span class="string">"You entered A"</span></div><div class="line">        ;;</div><div class="line">    B)</div><div class="line">        <span class="built_in">echo</span> <span class="string">"You entered B"</span></div><div class="line">        ;;</div><div class="line">    C)</div><div class="line">        <span class="built_in">echo</span> <span class="string">"You entered C"</span></div><div class="line">        ;;</div><div class="line">    *)</div><div class="line">        <span class="built_in">echo</span> <span class="string">"You did not enter A, B, or C"</span></div><div class="line">        ;;</div><div class="line"><span class="keyword">esac</span></div></pre></td></tr></table></figure>
+<h5 id="select-pattern"><a href="#select-pattern" class="headerlink" title="select pattern"></a>select pattern</h5><p>pattern:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">select varname [<span class="keyword">in</span> arg...]</div><div class="line"><span class="keyword">do</span></div><div class="line">    commands</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<p>example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">PS3=<span class="string">"Choose your favorite fruit from these possibilities: "</span></div><div class="line">select FRUIT <span class="keyword">in</span> apple banana blueberry kiwi orange watermelon STOP</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="keyword">if</span> [ <span class="string">"<span class="variable">$FRUIT</span>"</span> == <span class="string">""</span> ]; <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="_">-e</span> <span class="string">"Invalid entry.\n"</span></div><div class="line">        <span class="built_in">continue</span></div><div class="line">    <span class="keyword">elif</span> [ <span class="variable">$FRUIT</span> = STOP ]; <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"Thanks for playing!"</span></div><div class="line">        <span class="built_in">break</span></div><div class="line">    <span class="keyword">fi</span></div><div class="line"></div><div class="line">    <span class="built_in">echo</span> <span class="string">"You chose <span class="variable">$FRUIT</span> as your favorite."</span></div><div class="line">    <span class="built_in">echo</span> <span class="_">-e</span> <span class="string">"That is choice number <span class="variable">$REPLY</span>.\n"</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<h4 id="File-Descriptors"><a href="#File-Descriptors" class="headerlink" title="File Descriptors"></a>File Descriptors</h4><p>参考：</p>
+<ul>
+<li><a href="http://www.tldp.org/LDP/abs/html/io-redirection.html" target="_blank" rel="external">I/O Redirection</a></li>
+<li><a href="http://stackoverflow.com/questions/15606296/bash-file-descriptors" target="_blank" rel="external">Bash: file descriptors</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">usage</span></span> ()</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> [ <span class="variable">$#</span> <span class="_">-ne</span> 2 ]; <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"Usage: <span class="variable">$0</span> file1 file2"</span> 2&gt;&amp;1</div><div class="line">        <span class="built_in">exit</span> 1</div><div class="line">    <span class="keyword">fi</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># Default temporary directory</span></div><div class="line">: <span class="variable">$&#123;TEMPDIR:=/tmpdescrip&#125;</span></div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment">#Check argument count'</span></div><div class="line">usage <span class="string">"<span class="variable">$@</span>"</span></div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># Set up temporary files for sorting</span></div><div class="line">file1=<span class="variable">$TEMPDIR</span>/$$.file1</div><div class="line">file2=<span class="variable">$TEMPDIR</span>/$$.file2</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># Sort</span></div><div class="line">sort <span class="variable">$1</span> &gt; <span class="variable">$file1</span></div><div class="line">sort <span class="variable">$2</span> &gt; <span class="variable">$file2</span></div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># Open $file1 and $file2 for reading. Use file descriptors 3 and 4.</span></div><div class="line"><span class="built_in">exec</span> 3&lt;<span class="variable">$file1</span></div><div class="line"><span class="built_in">exec</span> 4&lt;<span class="variable">$file2</span></div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment">#Read the first line from each file to figure out how to start.</span></div><div class="line"><span class="built_in">read</span> Line1 &lt;&amp;3</div><div class="line">status1=$?</div><div class="line"><span class="built_in">read</span> Line2 &lt;&amp;4</div><div class="line">status2=$?</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment">#Strategy: while there is still input left in both files:</span></div><div class="line"><span class="built_in">echo</span> <span class="comment">#Output the line that should come first.</span></div><div class="line"><span class="built_in">echo</span> <span class="comment">#Read a new line from the file that line came from.</span></div><div class="line"><span class="keyword">while</span> [ <span class="variable">$status1</span> <span class="_">-eq</span> 0 <span class="_">-a</span> <span class="variable">$status2</span> <span class="_">-eq</span> 0 ]</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="keyword">if</span> [[ <span class="string">"<span class="variable">$Line2</span>"</span> &gt; <span class="string">"<span class="variable">$Line1</span>"</span> ]]; <span class="keyword">then</span></div><div class="line">            <span class="built_in">echo</span> <span class="_">-e</span> <span class="string">"1.\t<span class="variable">$Line1</span>"</span></div><div class="line">            <span class="built_in">read</span> -u3 Line1</div><div class="line">            status1=$?</div><div class="line">        <span class="keyword">else</span></div><div class="line">            <span class="built_in">echo</span> <span class="_">-e</span> <span class="string">"2.\t<span class="variable">$Line2</span>"</span></div><div class="line">            <span class="built_in">read</span> -u4 Line2</div><div class="line">            status2=$?</div><div class="line">    <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment">#Now one of the files is at end-of-file.</span></div><div class="line"><span class="built_in">echo</span> <span class="comment">#Read from each file until the end.</span></div><div class="line"><span class="built_in">echo</span> <span class="comment">#First file1:'</span></div><div class="line"><span class="keyword">while</span> [ <span class="variable">$status1</span> <span class="_">-eq</span> 0 ]</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">echo</span> <span class="_">-e</span> <span class="string">"1.\t<span class="variable">$Line1</span>"</span></div><div class="line">    <span class="built_in">read</span> Line1 &lt;&amp;3</div><div class="line">    status1=$?</div><div class="line"><span class="keyword">done</span></div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment">#Next file2:</span></div><div class="line"><span class="keyword">while</span> [[ <span class="variable">$status2</span> <span class="_">-eq</span> 0 ]]</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">echo</span> <span class="_">-e</span> <span class="string">"2.\t<span class="variable">$Line2</span>"</span></div><div class="line">    <span class="built_in">read</span> Line2 &lt;&amp;4</div><div class="line">    status2=$?</div><div class="line"><span class="keyword">done</span></div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment">#Close and remove both input files</span></div><div class="line"><span class="built_in">exec</span> 3&lt;&amp;- 4&lt;&amp;-</div><div class="line">rm <span class="_">-f</span> <span class="variable">$file1</span> <span class="variable">$file2</span></div><div class="line"><span class="built_in">exit</span> 0</div></pre></td></tr></table></figure>
+<h2 id="Shell命令-2"><a href="#Shell命令-2" class="headerlink" title="Shell命令"></a>Shell命令</h2><ul>
+<li><code>export</code></li>
+<li><code>source</code></li>
+<li><code>xargs</code>: construct argument list(s) and execute utility<ul>
+<li><a href="http://examplenow.com/zh-cn/xargs/man1" target="_blank" rel="external">Example xargs</a></li>
+<li><a href="http://www.thegeekstuff.com/2013/12/xargs-examples/" target="_blank" rel="external">10 Xargs Command Examples in Linux / UNIX</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="Schedule-Tasks"><a href="#Schedule-Tasks" class="headerlink" title="Schedule Tasks"></a>Schedule Tasks</h1><h2 id="目标-10"><a href="#目标-10" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>掌握cron</li>
+<li>掌握anacron</li>
+<li>掌握at</li>
+</ul>
+<h2 id="内容-7"><a href="#内容-7" class="headerlink" title="内容"></a>内容</h2><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li>PG2UL，page 605，Scheduling Tasks</li>
+<li><a href="http://linuxtools-rst.readthedocs.org/zh_CN/latest/tool/crontab.html" target="_blank" rel="external">crontab 定时任务</a></li>
+<li><a href="http://www.oschina.net/questcion/234345_42400" target="_blank" rel="external">linux Crontab 使用</a></li>
+<li><a href="http://www.ibm.com/developerworks/cn/linux/l-anacron/index.html" target="_blank" rel="external">使用 Anacron 处理 Linux 关机问题</a></li>
+<li><a href="http://www.blogjava.net/freeman1984/archive/2010/09/23/332715.html" target="_blank" rel="external">linux定时任务的设置</a></li>
+</ul>
+<h3 id="cron的坑"><a href="#cron的坑" class="headerlink" title="cron的坑"></a>cron的坑</h3><ul>
+<li>crontab文件设置了任务的执行时间，此时间依赖当前os的系统时区。</li>
+</ul>
+<h3 id="cron和anacron的区别"><a href="#cron和anacron的区别" class="headerlink" title="cron和anacron的区别"></a>cron和anacron的区别</h3><p>cron是用来控制循环执行的例行性工作的，可循环的时间为分钟、小时、每周、每月或每年等。比如我要设定机器每天早上8点进行备份，就可以用到这个服务。<br>除非我们的机器保持每天都24小时开始，否则就会有些系统例行工作都没有人做了，这个时候就可以用到anacron了。</p>
+<p>anacron并不是用来取代cron的，anacron存在的目的就在于我们上面提到的，在处理非 24 小时一直启动的Linux系统的cron服务的执行！<br>所以 anacron 并不能指定何时执行某项任务，而是以天为单位或者是在开机后立刻进行anacron的动作，他会去侦测停机期间应该进行但是并没有进行的cron服务，<br>如果有就将该任务执行一遍，然后就自动停止。anacron脚本不会在OS使用电池作为电源时候运行。</p>
+<h3 id="Crontab文件"><a href="#Crontab文件" class="headerlink" title="Crontab文件"></a>Crontab文件</h3><p>共有两种类型的 Cron 作业（即由 Cron 运行的程序）：系统 Cron 作业，由系统运行，执行系统维护任务；另一种是 用户 Cron 作业，由用户创建，用于执行用户任务。<br>对于这两种作业而言，系统 Cron 作业更加重要一些。这些作业可能包括清除 /tmp 中的陈旧文件、替换日志文件、更新垃圾邮件过滤规则，以及更新 locate 数据库。</p>
+<p>cron守护进程根据crontab文件中的配置执行定时任务。</p>
+<ul>
+<li>系统crontab文件保存在<code>/etc/cron.d</code>目录和<code>/etc/crontab</code>文件中</li>
+<li>用户可以使用<code>crontab</code>工具设置个人的crontab文件，用户的crontab文件保存在<code>/var/spool/cron/crontabs</code>中</li>
+</ul>
+<h4 id="系统crontab文件"><a href="#系统crontab文件" class="headerlink" title="系统crontab文件"></a>系统crontab文件</h4><p>crontab文件设置命令的执行频率。</p>
+<p><code>/etc/crontab</code>内容如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="comment"># /etc/crontab: system-wide crontab</span></div><div class="line"><span class="built_in">echo</span> <span class="comment"># Unlike any other crontab you don't have to run the `crontab'</span></div><div class="line"><span class="built_in">echo</span> <span class="comment"># command to install the new version when you edit this file</span></div><div class="line"><span class="built_in">echo</span> <span class="comment"># and files in /etc/cron.d. These files also have username fields,</span></div><div class="line"><span class="built_in">echo</span> <span class="comment"># that none of the other crontabs do.</span></div><div class="line"></div><div class="line">SHELL=/bin/sh</div><div class="line">PATH=/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/sbin:/bin:/usr/sbin:/usr/bin</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># m h dom mon dow user command</span></div><div class="line">17 *    * * *   root    <span class="built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.hourly</div><div class="line">25 6    * * *   root    <span class="built_in">test</span> -x /usr/sbin/anacron || ( <span class="built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.daily )</div><div class="line">47 6    * * 7   root    <span class="built_in">test</span> -x /usr/sbin/anacron || ( <span class="built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.weekly )</div><div class="line">52 6    1 * *   root    <span class="built_in">test</span> -x /usr/sbin/anacron || ( <span class="built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.monthly )</div></pre></td></tr></table></figure>
+<p>最后4行命令的格式如下：</p>
+<blockquote>
+<p>minute hour day-of-month month day-of-week user command</p>
+</blockquote>
+<p>The first five fields indicate when cron will execute the command:</p>
+<ul>
+<li>The <strong>minute</strong> is the number of minutes after the start of the hour</li>
+<li>the <strong>hour</strong> is the hour of the day based on a 24-hour clock</li>
+<li>the <strong>day-of-month</strong> is a number from 1 to 31</li>
+<li>the <strong>day-of-week</strong> is a number from 0 to 7, with 0 and 7 indicating Sunday</li>
+<li>An asterisk (<code>*</code>) substitutes for any value in a field</li>
+<li>The user is the username or user ID of the user that the command will run as</li>
+</ul>
+<p>除了<code>/etc/crontab</code>，cron守护进程还会读取<code>/etc/cron.d</code>下的配置文件。下面是<code>/etc/cron.d/anacron</code>的内容，<br>这段配置告知<code>cron</code>每天7:30 AM运行<code>anacron</code>初始化脚本。这段初始化脚本只会在系统开机且不使用电池电源的时候运行<code>anacron</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="comment"># /etc/cron.d/anacron: crontab entries for the anacron package</span></div><div class="line"></div><div class="line">SHELL=/bin/sh</div><div class="line">PATH=/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/sbin:/bin:/usr/sbin:/usr/bin</div><div class="line"></div><div class="line">30 7    * * *   root    start -q anacron || :</div></pre></td></tr></table></figure>
+<h4 id="用户crontab文件"><a href="#用户crontab文件" class="headerlink" title="用户crontab文件"></a>用户crontab文件</h4><ul>
+<li>用户crontab文件保存在<code>/var/spool/cron/crontabs/</code>目录下，并且以用户名命令</li>
+<li>可以通过<code>crontab -l</code>查看当前用户的crontab文件</li>
+<li>可以通过<code>crontab -e</code>创建或者编辑当前用户的crontab文件</li>
+<li>可以通过<code>crontab -r</code>删除当前用户的crontab文件</li>
+</ul>
+<h3 id="anacron配置文件"><a href="#anacron配置文件" class="headerlink" title="anacron配置文件"></a>anacron配置文件</h3><p>Anacron通过<code>/etc/anacrontab</code>文件进行控制。该文件可以包含注释行（使用一个前导散列符号<code>#</code>表示）、环境变量分配（比如<code>SHELL=/bin/bash</code>）和作业定义。</p>
+<p><code>/etc/anacrontab</code>中的内容如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="comment"># /etc/anacrontab: configuration file for anacron</span></div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># See anacron(8) and anacrontab(5) for details.</span></div><div class="line"></div><div class="line">SHELL=/bin/sh</div><div class="line">PATH=/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/sbin:/bin:/usr/sbin:/usr/bin</div><div class="line">HOME=/root</div><div class="line">LOGNAME=root</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="comment"># These replace cron's entries</span></div><div class="line">1   5   cron.daily  run-parts --report /etc/cron.daily</div><div class="line">7   10  cron.weekly run-parts --report /etc/cron.weekly</div><div class="line">@monthly    15  cron.monthly    run-parts --report /etc/cron.monthly</div></pre></td></tr></table></figure>
+<p>最后三行记录的格式如下：</p>
+<blockquote>
+<p>period delay identifier command</p>
+</blockquote>
+<ul>
+<li>period是anacron执行命令的频率，单位为天</li>
+<li>delay是anacron启动后，多长时间执行命令，单位为分钟</li>
+<li>identifier是anacron用来记录上次什么时候执行命令的文件的文件名，文件保存在<code>/var/spool/anacron</code>文件夹下</li>
+</ul>
+<h1 id="Futher-Reading"><a href="#Futher-Reading" class="headerlink" title="Futher Reading"></a>Futher Reading</h1><h2 id="Knowledge"><a href="#Knowledge" class="headerlink" title="Knowledge"></a>Knowledge</h2><ul>
+<li><a href="http://linuxtools-rst.readthedocs.org/zh_CN/latest/index.html" target="_blank" rel="external">Linux Tools Quick Tutorial</a></li>
+<li><a href="https://github.com/jlevy/the-art-of-command-line" target="_blank" rel="external">the-art-of-command-line</a></li>
+<li><a href="https://bash.cyberciti.biz/guide/Main_Page" target="_blank" rel="external">Linux Shell Scripting Tutorial (LSST) v2.0</a></li>
+<li><a href="http://www.cnblogs.com/peida/archive/2012/12/05/2803591.html" target="_blank" rel="external">每天一个linux命令目录</a></li>
+</ul>
+<h2 id="Utilites"><a href="#Utilites" class="headerlink" title="Utilites"></a>Utilites</h2><ul>
+<li><a href="http://explainshell.com/" target="_blank" rel="external">Explain Shell</a></li>
+</ul>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><h2 id="如何安装中文语言支持及中文输入法"><a href="#如何安装中文语言支持及中文输入法" class="headerlink" title="如何安装中文语言支持及中文输入法"></a>如何安装中文语言支持及中文输入法</h2><p><a href="http://wiki.ubuntu.org.cn/%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95" target="_blank" rel="external">Ubuntu上的输入法情况</a>:</p>
+<blockquote>
+<p>Ubuntu上有IBus、Fcitx等开源的输入法框架，支持各种各样的引擎。<br>Rime（中州韵输入法引擎）是一种流行的开源跨平台输入法，支持IBus和Fcitx框架。<br>搜狗输入法在2014年4月发布了Linux版本，使用Fcitx框架。<br>免费但不开源的小小输入法，也提供对Ubuntu的支持。<br>作为Chrome扩展的输入法：Google Input Tools<br>作为Firefox扩展的输入法：火输(Fireinput)。<br>可以直接在浏览器中使用的云输入法：搜狗云输入法、QQ云输入法等。</p>
+</blockquote>
+<p>目前比较推荐Linux上的搜狗输入法：<a href="http://pinyin.sogou.com/linux/?r=pinyin" target="_blank" rel="external">下载地址</a></p>
+<p>搜过拼音的安装方法：</p>
+<ul>
+<li><a href="http://blog.csdn.net/tao_627/article/details/24119037" target="_blank" rel="external">Ubuntu 14.04安装搜狗拼音linux版应该注意的问题</a></li>
+<li><a href="http://blog.csdn.net/rflyee/article/details/9472579" target="_blank" rel="external">Ubuntu下安装搜狗拼音输入法</a></li>
+</ul>
+<h2 id="如何升级系统，安装最新的补丁和最新版本的软件"><a href="#如何升级系统，安装最新的补丁和最新版本的软件" class="headerlink" title="如何升级系统，安装最新的补丁和最新版本的软件"></a>如何升级系统，安装最新的补丁和最新版本的软件</h2><p>GUI操作</p>
+<ol>
+<li>System Settings -&gt; Softwares&amp;Updates -&gt; Select best download server，选择最佳的软件更新服务器</li>
+<li>然后按Alt+F2组合键调出运行命令框，然后键入<code>update-manager -d</code>，然后升级系统</li>
+</ol>
+<p>终端操作</p>
+<ol>
+<li>执行下面的命令，安装最新的系统补丁：<code>sudo apt-get update &amp;&amp; sudo apt-get dist-upgrade &amp;&amp; sudo apt-get autoclean</code></li>
+</ol>
+<h2 id="修改Ubuntu-Software-Repository的下载地址"><a href="#修改Ubuntu-Software-Repository的下载地址" class="headerlink" title="修改Ubuntu Software Repository的下载地址"></a>修改Ubuntu Software Repository的下载地址</h2><p>参考：</p>
+<ol>
+<li>GUI操作参考<a href="http://blog.csdn.net/tennysonsky/article/details/44221433" target="_blank" rel="external">Linux开发环境搭建与使用——ubuntu更新设置</a></li>
+<li>Bash操作参考：<a href="https://help.ubuntu.com/community/Repositories/CommandLine" target="_blank" rel="external">Repositories/CommandLine</a></li>
+</ol>
+<p>Ubuntu uses apt for package management. Apt stores a list of repositories or software channels in the file</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/apt/sources.list</div></pre></td></tr></table></figure>
+<p>and in any file with the suffix .list under the directory</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/apt/sources.list.d/</div></pre></td></tr></table></figure>
+<p>See <code>man sources.list</code> for more about this storage mechanism.</p>
+<p>By editing these files from the command line, we can add, remove, or temporarily disable software repositories.</p>
+<p>将<code>sources.list</code>中默认下载地址改为从阿里云下载地址：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo sed -i <span class="string">'s/http\:\/\/cn-north-1b\.clouds\.archive\.ubuntu\.com/http\:\/\/mirrors\.yun-idc\.com/g'</span> /etc/apt/sources.list</div></pre></td></tr></table></figure>
+<h2 id="如何给Ubuntu-Linux-Virutal-Machine安装VMWare-Tools"><a href="#如何给Ubuntu-Linux-Virutal-Machine安装VMWare-Tools" class="headerlink" title="如何给Ubuntu Linux Virutal Machine安装VMWare Tools"></a>如何给Ubuntu Linux Virutal Machine安装VMWare Tools</h2><ul>
+<li>安装方法参考<ul>
+<li><a href="http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&amp;docType=kc&amp;externalId=1022525" target="_blank" rel="external">Installing VMware Tools in an Ubuntu virtual machine (1022525)</a></li>
+</ul>
+</li>
+<li>卸载方法参考<ul>
+<li><a href="http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&amp;docType=kc&amp;externalId=1014522&amp;sliceId=1&amp;docTypeID=DT_KB_1_1&amp;dialogID=672738403&amp;stateId=1%200%20672744194" target="_blank" rel="external">Uninstalling and manually installing VMware Tools in VMware Fusion (1014522)</a></li>
+<li><a href="http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&amp;docType=kc&amp;externalId=1004351&amp;sliceId=1&amp;docTypeID=DT_KB_1_1&amp;dialogID=672738403&amp;stateId=1%200%20672744194" target="_blank" rel="external">VMware Tools Uninstaller in Ubuntu Guest Does Not Remove vmxnet Module (1004351)</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="如何给Ubuntu-Linux-Virtual-Machine安装Parallel-Tools"><a href="#如何给Ubuntu-Linux-Virtual-Machine安装Parallel-Tools" class="headerlink" title="如何给Ubuntu Linux Virtual Machine安装Parallel Tools"></a>如何给Ubuntu Linux Virtual Machine安装Parallel Tools</h2><p>参考<a href="http://kb.parallels.com/en/113394" target="_blank" rel="external">How do I install Parallels Tools in Ubuntu Virtual Machine?</a></p>
+<h2 id="使用命令man-wget-gt-man-wget-txt把命令文档输入到文本文件后，打开man-wget-txt，发现有很多重复字符，或者乱码？"><a href="#使用命令man-wget-gt-man-wget-txt把命令文档输入到文本文件后，打开man-wget-txt，发现有很多重复字符，或者乱码？" class="headerlink" title="使用命令man wget &gt; man-wget.txt把命令文档输入到文本文件后，打开man-wget.txt，发现有很多重复字符，或者乱码？"></a>使用命令<code>man wget &gt; man-wget.txt</code>把命令文档输入到文本文件后，打开man-wget.txt，发现有很多重复字符，或者乱码？</h2><p>将man手册查询命令输出到文本文件中，要求过滤掉控制字符^H（Backspace (退格)）  </p>
+<p><code>man chmod | col –b &gt; /home/man_chmod.txt</code></p>
+<p>col命令的使用方法见<a href="http://myblog.jyc.edu.cn/?p=62" target="_blank" rel="external">col命名详解</a></p>
+<h2 id="如何修改OS的hostname"><a href="#如何修改OS的hostname" class="headerlink" title="如何修改OS的hostname"></a>如何修改OS的hostname</h2><p>参考<a href="http://askubuntu.com/questions/87665/how-do-i-change-the-hostname-without-a-restart" target="_blank" rel="external">How do I change the hostname without a restart?</a></p>
+<p><code>hostname</code>临时保存在内存，永久保存在<code>/etc/hostname</code>文件中，同时<code>/etc/hosts</code>文件中也配置了<code>hostname</code>对应的IP地址</p>
+<ul>
+<li>查看主机名<code>hostname</code></li>
+<li>临时修改主机名，命令执行后即时生效<code>sudo hostname [yourhostname]</code>，重启后依然恢复原hostname</li>
+<li>永久修改主机名，将新的主机名写入，重启系统后生效<code>sudo vim /etc/hostname</code></li>
+<li><code>hostnamectl</code>命令包含了临时修改hostname和修改<code>/etc/hostname</code>两种操作，但是不会修改<code>/etc/hosts</code>，所以执行<code>hostnamectl</code>命令后还需要手动修改<code>/etc/hosts</code>文件  </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hostnamectl <span class="built_in">set</span>-hostname new-hostname</div></pre></td></tr></table></figure>
+<h2 id="设置DNS服务的服务地址"><a href="#设置DNS服务的服务地址" class="headerlink" title="设置DNS服务的服务地址"></a>设置DNS服务的服务地址</h2><p>编辑保存DNS信息的配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo pico /etc/resolv.conf</div></pre></td></tr></table></figure>
+<p>最多可以使用3个DNS地址，内容如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nameserver xxx.xxx.xxx.xxx  nameserver xxx.xxx.xxx.xxx  nameserver xxx.xxx.xxx.xxx</div></pre></td></tr></table></figure>
+<p>对resolv.conf文件的修改是即时生效的，可以使用nslookup命令进行查询。</p>
+<h2 id="如何配置网卡和IP地址"><a href="#如何配置网卡和IP地址" class="headerlink" title="如何配置网卡和IP地址"></a>如何配置网卡和IP地址</h2><p>ubuntu的网络配置信息放在<code>/etc/network/interfaces</code>中，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/network/interfaces</div></pre></td></tr></table></figure>
+<p>要通过dhcp获取ip，则添加如下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">auto eth0</div><div class="line">iface eth0 inet dhcp</div></pre></td></tr></table></figure>
+<p>如果配置静态ip，则添加如下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">auto eth0</div><div class="line">iface eth0 inet static</div><div class="line">    address 192.168.1.201</div><div class="line">    netmask 255.255.255.0</div><div class="line">    gateway 192.168.1.1</div></pre></td></tr></table></figure>
+<p>需重启下网络服务使配置生效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/networking restart</div></pre></td></tr></table></figure>
+<h2 id="如何从Internet更新ubuntu本地的时间？"><a href="#如何从Internet更新ubuntu本地的时间？" class="headerlink" title="如何从Internet更新ubuntu本地的时间？"></a>如何从Internet更新ubuntu本地的时间？</h2><p>You can do so with <code>sudo ntpdate time.nist.gov</code> other servers include time.windows.com, etc.<br><a href="http://www.pool.ntp.org/" target="_blank" rel="external">http://www.pool.ntp.org/</a> lists time servers around the world.</p>
+<h2 id="切换网络后，如何强制更新网卡IP？"><a href="#切换网络后，如何强制更新网卡IP？" class="headerlink" title="切换网络后，如何强制更新网卡IP？"></a>切换网络后，如何强制更新网卡IP？</h2><p>To renew or release an IP address for the eth0 interface, enter:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo dhclient -r eth0</div><div class="line">$ sudo dhclient eth0</div></pre></td></tr></table></figure>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2017/03/21/Mock数据（后台模拟数据）/" style="float: left;">
+        ← Mock数据(后台模拟数据)
+    </a>
+    
+    
+    <a class="pull-right" href="/2017/03/21/codeblocks/">
+        Codeblocks教程 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2017/03/21/linux-overview/" data-title="Linux学习大纲" data-url="http://yoursite.com/2017/03/21/linux-overview/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"Moressette"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Built with all the love in the world by <a href="https://weibo.com/pandatvdodododo" style="color:#ffffff">❤dodo</a> and Moressette. All Rights Reserved.
+                </p>
+                <p>
+                    <span id="busuanzi_container_site_pv" style="display: inline;">
+                      This site already had <span id="busuanzi_value_site_pv"></span> Visits by
+                    </span>
+                    <span id="busuanzi_container_site_uv" style="display: inline;">
+                      <span id="busuanzi_value_site_uv"></span> Visitors 
+                    </span>
+                </p>
+                <p>Powered By <a href="https://hexo.io/zh-cn/" style="color: #767D84">Hexo</a> and theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Moressette" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- Web visitor count -->
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
